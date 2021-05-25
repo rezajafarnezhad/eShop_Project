@@ -1,0 +1,12 @@
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\bin\Debug\net5.0\0_Framework.deps.json
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\bin\Debug\net5.0\0_Framework.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\bin\Debug\net5.0\ref\0_Framework.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\bin\Debug\net5.0\0_Framework.pdb
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.csprojAssemblyReference.cache
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.AssemblyInfoInputs.cache
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.AssemblyInfo.cs
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.csproj.CoreCompileInputs.cache
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\ref\0_Framework.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\0_Framework\obj\Debug\net5.0\0_Framework.pdb
