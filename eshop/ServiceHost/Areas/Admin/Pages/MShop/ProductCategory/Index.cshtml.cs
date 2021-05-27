@@ -29,10 +29,11 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductCategory
             productCategories = _productCategoryApplication.Search(SearchModel);
         }
 
-        public CreateProductCategory productCategory { get; set; }
+       
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", productCategory);
+            var commnd = new CreateProductCategory();
+            return Partial("./Create", commnd);
         }
 
         public JsonResult OnPostCreate(CreateProductCategory command)

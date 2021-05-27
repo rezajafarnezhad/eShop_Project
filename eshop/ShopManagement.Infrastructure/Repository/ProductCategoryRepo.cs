@@ -38,7 +38,16 @@ namespace ShopManagement.Infrastructure.Repository
             };
         }
 
+        public List<ProductCategoryViewModel> GetProductCategories()
+        {
+            return _context.ProductCategories.Select(c => new ProductCategoryViewModel()
+            {
+                Id = c.Id,
+                Name = c.Name
 
+            }).ToList();
+
+        }
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {

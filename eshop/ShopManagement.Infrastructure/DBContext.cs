@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
+using ShopManagement.Domain.ProductPictureAgg;
+using ShopManagement.Domain.SlideAgg;
 using ShopManagement.Infrastructure.Mapping;
 using System;
 using System.Collections.Generic;
@@ -12,13 +15,16 @@ namespace ShopManagement.Infrastructure
     public class DBContext : DbContext
     {
 
-        public DBContext(DbContextOptions<DBContext> options):base(options)
+        public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
 
         }
 
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductPicture> ProductPictures { get; set; }
+        public DbSet<Slide> Slides { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

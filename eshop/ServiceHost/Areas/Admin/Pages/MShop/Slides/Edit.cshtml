@@ -1,0 +1,81 @@
+﻿@model ShopManagement.Application.Contract.Slide.EditSlide
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ویرایش اسلایدر : @Model.Heading </h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh">
+    <div class="modal-body">
+
+        <input type="hidden" asp-for="@Model.Id" value="@Model.Id" />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.Picture" class="control-label">تصویر اسلایدر</label>
+                    <input type="text" class="form-control" asp-for="@Model.Picture">
+                    <span asp-validation-for="@Model.Picture" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.PictureAlt" class="control-label">Alt</label>
+                    <input type="text" class="form-control" asp-for="@Model.PictureAlt">
+                    <span asp-validation-for="@Model.PictureAlt" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.PictureTitle" class="control-label">عنوان عکس</label>
+                    <input type="text" class="form-control" asp-for="@Model.PictureTitle">
+                    <span asp-validation-for="@Model.PictureTitle" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.Heading" class="control-label">Heading</label>
+                    <input type="text" class="form-control" asp-for="@Model.Heading">
+                    <span asp-validation-for="@Model.Heading" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.Title" class="control-label">عنوان اسلایدر</label>
+                    <input type="text" class="form-control" asp-for="@Model.Title">
+                    <span asp-validation-for="@Model.Title" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.Text" class="control-label">متن اسلایدر</label>
+                    <textarea rows="5" type="text" class="form-control" asp-for="@Model.Text"></textarea>
+                    <span asp-validation-for="@Model.Text" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.btnText" class="control-label">متن دکمه</label>
+                    <input type="text" class="form-control" asp-for="@Model.btnText">
+                    <span asp-validation-for="@Model.btnText" class="error"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-warning waves-effect waves-light">ویرایش</button>
+    </div>
+</form>

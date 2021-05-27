@@ -10,7 +10,7 @@ namespace ShopManagement.Application.Contract.ProductCategory
 {
     public class CreateProductCategory
     {
-
+        
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Name { get; set; }
         public string Description { get; set; }
