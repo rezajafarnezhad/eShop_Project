@@ -79,7 +79,7 @@ namespace ShopManagement.Application
             return _productRepo.GetEdit(id);
         }
 
-        
+
 
         public OperationResult Instock(long id)
         {

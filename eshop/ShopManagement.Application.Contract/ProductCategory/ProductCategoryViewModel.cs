@@ -6,6 +6,7 @@
         public string Name { get; set; }
         public string picture { get; set; }
         public long ProductCount { get; set; }
+        public bool ShowInMainPage { get; set; }
         public string CreationDate { get; set; }
 
     }

@@ -122,6 +122,9 @@ namespace ShopManagement.Infrastructure.Migrations
                         .HasMaxLength(233)
                         .HasColumnType("nvarchar(233)");
 
+                    b.Property<bool>("ShowinMainPage")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Slug")
                         .IsRequired()
                         .HasMaxLength(300)

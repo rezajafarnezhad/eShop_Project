@@ -53,26 +53,55 @@
                                     <th>عکس</th>
                                     <th>نام گروه</th>
                                     <th>تاریخ درج</th>
+                                    <th>در صفحه اصلی نمایش داده شود</th>
                                     <th>عملیات</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.productCategories)
                                 {
-                                    <tr>
-                                        <td>@item.Id</td>
-                                        <td>
-                                            <img src="@item.picture" style="width: 70px; height: 70px" />
-                                        </td>
-                                        <td>@item.Name</td>
-                                        <td>@item.CreationDate</td>
-                                        <td>
-                                            <a class="btn btn-warning pull-right m-rl-5"
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                                <i class="fa fa-edit"></i> ویرایش
-                                            </a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>
+                                        <img src="@item.picture" style="width: 70px; height: 70px" />
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>
+                                        @if (item.ShowInMainPage)
+                                        {
+                                            <i class="fa-2x fa fa-check text-success"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa-2x fa fa-remove text-danger"></i>
+
+                                        }
+                                    </td>
+
+                                    <td>
+                                        <a class="btn btn-warning pull-right m-rl-5"
+                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                            <i class="fa fa-edit"></i> ویرایش
+                                        </a>
+                                        @if (item.ShowInMainPage)
+                                        {
+                                            <form method="post" asp-page-handler="NotShow" class="pull-left">
+                                                <input type="hidden" name="id" asp-for="@item.Id" />
+                                                <button class="btn btn-success">لغو نمایش</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <form method="post" asp-page-handler="Show" class="pull-left">
+                                                <input type="hidden" name="id" asp-for="@item.Id" />
+                                                <button class="btn btn-info">نمایش داده شود</button>
+                                            </form>
+                                        }
+
+
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>

@@ -29,7 +29,18 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductCategory
             productCategories = _productCategoryApplication.Search(SearchModel);
         }
 
-       
+
+        public IActionResult OnPostShow(long id)
+        {
+            var result = _productCategoryApplication.ShowinMainPage(id);
+            return RedirectToPage("./Index");
+        }
+        public IActionResult OnPostNotShow(long id)
+        {
+            var result = _productCategoryApplication.NotShowinMainPage(id);
+            return RedirectToPage("./Index");
+        }
+
         public IActionResult OnGetCreate()
         {
             var commnd = new CreateProductCategory();

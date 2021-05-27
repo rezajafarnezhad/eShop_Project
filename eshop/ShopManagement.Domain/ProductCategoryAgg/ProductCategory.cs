@@ -19,7 +19,7 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         public string KeyWords { get; private set; }
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
-
+        public bool ShowinMainPage { get; private set; }
         public List<Product> Products { get; set; }
 
         public ProductCategory(string name, string description, string picture,
@@ -33,6 +33,7 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             KeyWords = keyWords;
             MetaDescription = metaDescription;
             Slug = slug;
+            ShowinMainPage = false;
             Products = new List<Product>();
         }
 
@@ -48,6 +49,16 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             KeyWords = keyWords;
             MetaDescription = metaDescription;
             Slug = slug;
+        }
+
+        public void ShowinPage()
+        {
+            ShowinMainPage = true;
+        }
+
+        public void NotShowinPage()
+        {
+            ShowinMainPage = false;
         }
     }
 }
