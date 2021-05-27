@@ -5,6 +5,12 @@
     <h4 class="modal-title">ویرایش اسلایدر : @Model.Heading </h4>
 </div>
 
+<div class="alert alert-warning">
+    <p>
+        کاربر عزیز: تصاویر در سایز 785*1820 باید بارگزای شود
+    </p>
+</div>
+
 <form asp-page="./Index" asp-page-handler="Edit"
       method="post"
       data-ajax="true"
@@ -70,6 +76,13 @@
                     <label asp-for="@Model.btnText" class="control-label">متن دکمه</label>
                     <input type="text" class="form-control" asp-for="@Model.btnText">
                     <span asp-validation-for="@Model.btnText" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="@Model.link" class="control-label">لینک</label>
+                    <input type="text" class="form-control" asp-for="@Model.link">
+                    <span asp-validation-for="@Model.link" class="error"></span>
                 </div>
             </div>
         </div>

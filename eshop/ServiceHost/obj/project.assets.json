@@ -2041,6 +2041,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "01_eshopQuery/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ShopManagement.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/01_eshopQuery.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/01_eshopQuery.dll": {}
+        }
+      },
       "0_Framework/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -2085,6 +2098,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "01_eshopQuery": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
@@ -7245,6 +7259,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "01_eshopQuery/1.0.0": {
+      "type": "project",
+      "path": "../01_eshopQuery/01_eshopQuery.csproj",
+      "msbuildProject": "../01_eshopQuery/01_eshopQuery.csproj"
     },
     "0_Framework/1.0.0": {
       "type": "project",

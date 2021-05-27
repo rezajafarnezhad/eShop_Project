@@ -24,3 +24,5 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuratio
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.genruntimeconfig.cache
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\01_eshopQuery.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\01_eshopQuery.pdb

@@ -1520,6 +1520,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "01_eshopQuery/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ShopManagement.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/01_eshopQuery.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/01_eshopQuery.dll": {}
+        }
+      },
       "0_Framework/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5811,6 +5824,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "01_eshopQuery/1.0.0": {
+      "type": "project",
+      "path": "../01_eshopQuery/01_eshopQuery.csproj",
+      "msbuildProject": "../01_eshopQuery/01_eshopQuery.csproj"
+    },
     "0_Framework/1.0.0": {
       "type": "project",
       "path": "../0_Framework/0_Framework.csproj",
@@ -5839,6 +5857,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "01_eshopQuery >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
@@ -5886,6 +5905,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\01_eshopQuery\\01_eshopQuery.csproj": {
+              "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\01_eshopQuery\\01_eshopQuery.csproj"
+            },
             "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
               "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
             },

@@ -22,6 +22,7 @@ namespace ShopManagement.Infrastructure.Mapping
             builder.Property(c => c.Text).HasMaxLength(1200);
             builder.Property(c => c.Title).HasMaxLength(1200);
             builder.Property(c => c.btnText).HasMaxLength(50);
+            builder.Property(c => c.Link).HasMaxLength(1100);
 
 
         }

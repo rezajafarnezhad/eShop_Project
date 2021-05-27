@@ -34,6 +34,7 @@ namespace ShopManagement.Infrastructure.Repository
                 PictureTitle = slide.PictureTitle,
                 Text = slide.Text,
                 Title = slide.Title,
+                link = slide.Link
 
             };
 

@@ -1850,6 +1850,17 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "01_eshopQuery/1.0.0": {
+        "dependencies": {
+          "ShopManagement.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "01_eshopQuery.dll": {}
+        },
+        "compile": {
+          "01_eshopQuery.dll": {}
+        }
+      },
       "0_Framework/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.6"
@@ -1886,6 +1897,7 @@
       },
       "ShopManagement.Configuration/1.0.0": {
         "dependencies": {
+          "01_eshopQuery": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
@@ -4500,6 +4512,11 @@
       "sha512": "sha512-kwo6Kf+0jjEcmB+S2BI5SL0xHHRIBd0Cjf11BGliuZ3Va9V1hDbKZmq0mb7HO8QPlYYrq8eNToOzipfw6ARKEw==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "01_eshopQuery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "0_Framework/1.0.0": {
       "type": "project",

@@ -458,3 +458,6 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\Slides\Edit.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\Slides\Index.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shared\_SideMenu.cshtml.g.cs
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\01_eshopQuery.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\01_eshopQuery.pdb
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Slide\Default.cshtml.g.cs

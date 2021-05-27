@@ -198,6 +198,10 @@ namespace ShopManagement.Infrastructure.Migrations
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Link")
+                        .HasMaxLength(1100)
+                        .HasColumnType("nvarchar(1100)");
+
                     b.Property<string>("Picture")
                         .IsRequired()
                         .HasMaxLength(1200)
