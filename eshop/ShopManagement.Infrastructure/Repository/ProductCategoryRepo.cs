@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
 using System;
@@ -55,7 +56,7 @@ namespace ShopManagement.Infrastructure.Repository
             {
                 Id = c.Id,
                 Name = c.Name,
-                CreationDate = c.CreationDate.ToString(),
+                CreationDate = c.CreationDate.ToFarsi(),
                 picture = c.picture,
                 ProductCount = 0,
                 ShowInMainPage=c.ShowinMainPage

@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
@@ -68,7 +69,7 @@ namespace ShopManagement.Infrastructure.Repository
                 CategoryName = c.ProductCategory.Name,
                 CategoryId = c.CategoryId,
                 InStock = c.IsinStocke,
-                CreationDate = c.CreationDate.ToString("dddd/MM/yyyy")
+                CreationDate = c.CreationDate.ToFarsi()
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))

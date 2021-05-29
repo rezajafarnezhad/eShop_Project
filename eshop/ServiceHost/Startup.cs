@@ -1,14 +1,16 @@
+using DiscountManagement;
+using ShopManagement.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ShopManagement.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DiscountManagement.Configuration;
 
 namespace ServiceHost
 {
@@ -26,8 +28,8 @@ namespace ServiceHost
         {
 
             var ConnectionString = Configuration.GetConnectionString("EShopDB");
-            ShopManagementBootstrapper.Configure(services,ConnectionString);
-
+            ShopManagementBootstrapper.Configure(services, ConnectionString);
+            DiscountManagemantBootstrapper.Configure(services, ConnectionString);
 
             services.AddRazorPages();
         }

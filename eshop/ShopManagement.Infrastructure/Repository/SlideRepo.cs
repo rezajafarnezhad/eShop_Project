@@ -1,4 +1,5 @@
-﻿using _0_Framework.Domain;
+﻿using _0_Framework.Application;
+using _0_Framework.Domain;
 using _0_Framework.Infrastructure;
 using ShopManagement.Application.Contract.Slide;
 using ShopManagement.Domain.SlideAgg;
@@ -49,7 +50,7 @@ namespace ShopManagement.Infrastructure.Repository
                 IsRemoved = c.IsRemoved,
                 Picture = c.Picture,
                 Title = c.Title,
-                CreationDate = c.CreationDate.ToString("dd/mm/yyyy")
+                CreationDate = c.CreationDate.ToFarsi()
 
             }).OrderByDescending(c=>c.Id).ToList();
         }

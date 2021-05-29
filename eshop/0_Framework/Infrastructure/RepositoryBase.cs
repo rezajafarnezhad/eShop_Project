@@ -12,7 +12,6 @@ namespace _0_Framework.Infrastructure
     public class RepositoryBase<Tkey, T> : IRepository<Tkey, T> where T : class
     {
         private readonly DbContext _context;
-
         public RepositoryBase(DbContext context)
         {
             _context = context;

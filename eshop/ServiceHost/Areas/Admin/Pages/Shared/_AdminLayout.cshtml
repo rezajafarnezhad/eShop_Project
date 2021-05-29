@@ -241,6 +241,14 @@
 
     @RenderSection("Sc", false)
 
+    <script>
+        $('.persianDateInput').persianDatepicker({
+            format: 'YYYY/MM/DD',
+            autoClose: true,
+            initialValueType: "persian"
+        });
+    </script>
+
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->
     <!-- Counter Up -->
