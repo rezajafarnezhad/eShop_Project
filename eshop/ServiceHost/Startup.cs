@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DiscountManagement.Configuration;
+using InventoryManagement.Configuration;
 
 namespace ServiceHost
 {
@@ -28,8 +29,13 @@ namespace ServiceHost
         {
 
             var ConnectionString = Configuration.GetConnectionString("EShopDB");
+
+            #region IOC
             ShopManagementBootstrapper.Configure(services, ConnectionString);
             DiscountManagemantBootstrapper.Configure(services, ConnectionString);
+            InventoryManagemantBootstrapper.Configure(services, ConnectionString);
+
+            #endregion
 
             services.AddRazorPages();
         }

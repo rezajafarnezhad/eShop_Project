@@ -63,11 +63,10 @@
                                     <th>عکس</th>
                                     <th>نام</th>
                                     <th>کد محصول</th>
-                                    <th>قیمت</th>
                                     <th>گروه محصول</th>
-                                    <th>وضعیت</th>
                                     <th>تاریخ درج</th>
                                     <th>عملیات</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,45 +79,17 @@
                                     </td>
                                     <td>@item.Name</td>
                                     <td>@item.Code</td>
-                                    <td>@item.UnitPrice</td>
+                                    
                                     <td>@item.CategoryName</td>
-                                    <td>
-                                        @if (item.InStock)
-                                        {
-                                            <i class="fa fa-2x fa fa-check text-success"></i>
-                                        }
-                                        else
-                                        {
-                                            <i class="fa fa-2x fa fa-remove text-danger"></i>
-
-                                        }
-                                    </td>
+                        
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        <a class="btn btn-warning pull-right m-rl-5"
+                                        <a class="btn btn-sm btn-warning waves-effect waves-light m-b-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                             <i class="fa fa-edit"></i> ویرایش
                                         </a>
-
-                                        @if (item.InStock)
-                                        {
-
-                                            <form method="post" asp-page-handler="OutOfStock" class="pull-left">
-                                                <input type="hidden" name="id" asp-for="@item.Id" />
-                                                <button class="btn btn-success">اتمام موجودی</button>
-                                            </form>
-
-                                        }
-                                        else
-                                        {
-                                            <form method="post" asp-page-handler="InStock" class="pull-left">
-                                                <input type="hidden" name="id" asp-for="@item.Id" />
-                                                <button class="btn btn-danger">موجود شد</button>
-                                            </form>
-                                        }
-
-
                                     </td>
+                                
                                 </tr>
                                 }
                             </tbody>

@@ -16,9 +16,6 @@ namespace ShopManagement.Application.Contract.Product
         EditProduct GetForEdit(long id);
         List<ProductViewModel> Search(ProductSearchModel searchModel);
        
-        OperationResult Instock(long id);
-        OperationResult outOfstock(long id);
-
         List<ProductViewModel> GetProducts();
 
     }

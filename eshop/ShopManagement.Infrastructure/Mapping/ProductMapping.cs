@@ -26,7 +26,7 @@ namespace ShopManagement.Infrastructure.Mapping
             builder.Property(c => c.Code).HasMaxLength(255).IsRequired();
             builder.Property(c => c.KeyWords).HasMaxLength(555).IsRequired();
             builder.Property(c => c.MetaDescription).HasMaxLength(655).IsRequired();
-            builder.Property(c => c.UnitPrice).HasMaxLength(200).IsRequired();
+            
 
 
             builder.HasOne(c => c.ProductCategory).WithMany(c => c.Products).HasForeignKey(c => c.CategoryId);

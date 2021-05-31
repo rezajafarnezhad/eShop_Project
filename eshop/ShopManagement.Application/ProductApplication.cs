@@ -35,7 +35,7 @@ namespace ShopManagement.Application
             }
 
             var slug = GenerateSlug.Slugify(command.Slug);
-            var Product = new Product(command.Name, command.Code, command.UnitPrice, command.ShortDescription, command.Description,
+            var Product = new Product(command.Name, command.Code, command.ShortDescription, command.Description,
                 command.picture, command.pictureAlt, command.pictureTitle, command.KeyWords,
                 command.MetaDescription, slug, command.CategoryId);
 
@@ -65,7 +65,7 @@ namespace ShopManagement.Application
 
             var slug = GenerateSlug.Slugify(command.Slug);
 
-            product.Edit(command.Name, command.Code, command.UnitPrice, command.ShortDescription, command.Description,
+            product.Edit(command.Name, command.Code, command.ShortDescription, command.Description,
                 command.picture, command.pictureAlt, command.pictureTitle, command.KeyWords,
                 command.MetaDescription, slug, command.CategoryId);
 
@@ -79,36 +79,6 @@ namespace ShopManagement.Application
             return _productRepo.GetEdit(id);
         }
 
-
-
-        public OperationResult Instock(long id)
-        {
-            OperationResult operationResult = new OperationResult();
-            var product = _productRepo.Get(id);
-            if (product == null)
-            {
-                return operationResult.Failed(ApplicationMessage.recordNotFound);
-            }
-
-            product.InStock();
-            _productRepo.Save();
-            return operationResult.Succeeded();
-        }
-
-        public OperationResult outOfstock(long id)
-        {
-
-            OperationResult operationResult = new OperationResult();
-            var product = _productRepo.Get(id);
-            if (product == null)
-            {
-                return operationResult.Failed(ApplicationMessage.recordNotFound);
-            }
-
-            product.OutofStock();
-            _productRepo.Save();
-            return operationResult.Succeeded();
-        }
 
         public List<ProductViewModel> Search(ProductSearchModel searchModel)
         {

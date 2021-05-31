@@ -42,9 +42,6 @@ namespace ShopManagement.Infrastructure.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<bool>("IsinStocke")
-                        .HasColumnType("bit");
-
                     b.Property<string>("KeyWords")
                         .IsRequired()
                         .HasMaxLength(555)
@@ -68,10 +65,6 @@ namespace ShopManagement.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(455)
                         .HasColumnType("nvarchar(455)");
-
-                    b.Property<double>("UnitPrice")
-                        .HasMaxLength(200)
-                        .HasColumnType("float");
 
                     b.Property<string>("picture")
                         .HasMaxLength(1200)

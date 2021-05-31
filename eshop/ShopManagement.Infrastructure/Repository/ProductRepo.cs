@@ -17,7 +17,7 @@ namespace ShopManagement.Infrastructure.Repository
     {
 
         private readonly DBContext _context;
-
+        
         public ProductRepo(DBContext context) : base(context)
         {
             _context = context;
@@ -41,7 +41,7 @@ namespace ShopManagement.Infrastructure.Repository
                 picture = product.picture,
                 pictureAlt = product.pictureAlt,
                 pictureTitle = product.pictureTitle,
-                UnitPrice = product.UnitPrice,
+
 
             };
 
@@ -64,11 +64,9 @@ namespace ShopManagement.Infrastructure.Repository
                 Id = c.Id,
                 Code = c.Code,
                 picture = c.picture,
-                UnitPrice = c.UnitPrice,
                 Name = c.Name,
                 CategoryName = c.ProductCategory.Name,
                 CategoryId = c.CategoryId,
-                InStock = c.IsinStocke,
                 CreationDate = c.CreationDate.ToFarsi()
             });
 

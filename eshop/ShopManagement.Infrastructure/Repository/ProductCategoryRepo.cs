@@ -58,8 +58,9 @@ namespace ShopManagement.Infrastructure.Repository
                 Name = c.Name,
                 CreationDate = c.CreationDate.ToFarsi(),
                 picture = c.picture,
-                ProductCount = 0,
-                ShowInMainPage=c.ShowinMainPage
+                ProductCount = c.Products.Count(),
+                ShowInMainPage=c.ShowinMainPage,
+                
 
             });
 

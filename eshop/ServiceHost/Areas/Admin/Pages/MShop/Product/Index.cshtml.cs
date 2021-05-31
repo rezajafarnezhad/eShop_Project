@@ -67,28 +67,6 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
         }
 
 
-        [TempData]
-        public string message { get; set; }
-
-        public IActionResult OnPostOutOfStock(int id)
-        {
-            var result = _productApplication.outOfstock(id);
-            if (result.isSucceeded)
-                return RedirectToPage("./Index");
-
-            message = result.Message;
-            return RedirectToPage("./Index");
-
-        }
-
-        public IActionResult OnPostInStock(int id)
-        {
-            var result = _productApplication.Instock(id);
-            if (result.isSucceeded)
-                return RedirectToPage("./Index");
-
-            message = result.Message;
-            return RedirectToPage("./Index");
-        }
+      
     }
 }
