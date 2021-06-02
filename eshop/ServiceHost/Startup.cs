@@ -15,6 +15,8 @@ using InventoryManagement.Configuration;
 
 namespace ServiceHost
 {
+    //sdss
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
