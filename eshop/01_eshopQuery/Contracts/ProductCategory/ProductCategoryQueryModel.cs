@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_eshopQuery.Contracts.Product;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace _01_eshopQuery.Contracts.ProductCategory
         public string pictureAlt { get; set; }
         public string pictureTitle { get; set; }
         public string Slug { get; set; }
+        public string Description { get; set; }
+        public string KeyWords { get; set; }
+        public string MetaDescription { get; set; }
+        public List<ProductQueryModel> Products { get; set; }
 
     }
 }

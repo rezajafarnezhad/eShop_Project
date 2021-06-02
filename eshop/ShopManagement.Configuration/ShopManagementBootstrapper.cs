@@ -1,4 +1,5 @@
-﻿using _01_eshopQuery.Contracts.ProductCategory;
+﻿using _01_eshopQuery.Contracts.Product;
+using _01_eshopQuery.Contracts.ProductCategory;
 using _01_eshopQuery.Contracts.Slide;
 using _01_eshopQuery.Query;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<IProductCategoryApplication, ProductCategoryApplication>();
             services.AddTransient<IProductCategoryRepo, ProductCategoryRepo>();
             services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
+            services.AddTransient<IProductQuery, ProductQuery>();
 
             services.AddTransient<IProductApplication, ProductApplication>();
             services.AddTransient<IProductRepo, ProductRepo>();

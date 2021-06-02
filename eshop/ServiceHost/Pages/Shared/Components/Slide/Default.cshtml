@@ -39,19 +39,21 @@
                             <div class="single-slider-item">
                                 <div class="hero-slider-item-wrapper">
                                     <div class="container">
-                                        <img src="@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" />
+                                        <a href="@item.link">
+                                            <img src="/Sliders/@item.Picture" alt="@item.PictureAlt" title="@item.PictureTitle" />
+                                        </a>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <div class="hero-slider-content hero-slider-content--left-space">
-                                                    <p class="slider-title slider-title--big-light">@item.Heading</p>
-                                                    <p class="slider-title slider-title--big-bold">@item.Title</p>
-                                                    <p class="slider-title slider-title--small">
-                                                        @item.Text
-                                                    </p>
-                                                    <a class="hero-slider-button" href="@item.link">
-                                                        @item.btnText <i class="ion-ios-plus-empty"></i>
-                                                    </a>
-                                                </div>
+                                                @*<div class="hero-slider-content hero-slider-content--left-space">
+                                                        <p class="slider-title slider-title--big-light">@item.Heading</p>
+                                                        <p class="slider-title slider-title--big-bold">@item.Title</p>
+                                                        <p class="slider-title slider-title--small">
+                                                            @item.Text
+                                                        </p>
+                                                        <a class="hero-slider-button" href="@item.link">
+                                                            @item.btnText <i class="ion-ios-plus-empty"></i>
+                                                        </a>
+                                                    </div>*@
                                             </div>
                                         </div>
                                     </div>
