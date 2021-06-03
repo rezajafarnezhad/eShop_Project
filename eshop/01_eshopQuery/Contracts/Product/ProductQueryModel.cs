@@ -20,6 +20,8 @@ namespace _01_eshopQuery.Contracts.Product
         public string Slug { get; set; }
         public bool hasDiscount { get; set; }
         public string Discountexpirydate{ get; set; }
+        public string ShortDescription { get; set; }
+        public string CategorySlug { get; set; }
 
     }
 }

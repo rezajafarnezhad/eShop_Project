@@ -499,3 +499,4 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\ProductCategory.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Menue\Default.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\SearchResult.cshtml.g.cs

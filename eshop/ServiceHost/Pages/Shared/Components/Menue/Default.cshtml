@@ -1,6 +1,6 @@
 ﻿
 
-
+@model List<_01_eshopQuery.Contracts.ProductCategory.ProductCategoryQueryModel>
 
 <div class="header-area header-sticky">
     <div class="container">
@@ -19,24 +19,22 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="index.html"><i class="fa fa-home"></i> صفحه اصلی  </a>
+                                    <a href="/"><i class="fa fa-home"></i> صفحه اصلی  </a>
                                 </li>
 
                                 <li class="menu-item-has-children">
                                     <a href="#"><i class="fa fa-reorder"></i>   محصولات</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item-has-children">
-                                            <a href="#">برند</a>
+                                            <a href="#"> برند ها</a>
                                             <ul class="sub-menu">
-                                                <li>
-                                                    <a href="cart.html">Cart</a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.html">Checkout</a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html">Wishlist</a>
-                                                </li>
+
+                                                @foreach (var item in Model)
+                                                {
+                                                    <li>
+                                                        <a asp-page="ProductCategory" asp-route-id="@item.Slug">@item.Name</a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </li>
                                     </ul>
@@ -262,15 +260,15 @@
                             <li class="menu-item-has-children">
                                 <a href="#">برند ها</a>
                                 <ul class="sub-menu">
-                                    <li>
-                                        <a href="cart.html">Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout.html">Checkout</a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html">Wishlist</a>
-                                    </li>
+                                    @foreach (var item in Model)
+                                    {
+                                        <li>
+                                            <a asp-page="ProductCategory" asp-route-id="@item.Slug">@item.Name</a>
+                                        </li>
+                                    }
+
+                                    
+
                                 </ul>
                             </li>
 
@@ -300,13 +298,13 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                          <a href="#"><i class="fa fa-phone menueMobile"></i> تماس با فروشگاه </a>
+                        <a href="#"><i class="fa fa-phone menueMobile"></i> تماس با فروشگاه </a>
                     </li>
 
                 </ul>
             </nav>
 
-          
+
 
 
 

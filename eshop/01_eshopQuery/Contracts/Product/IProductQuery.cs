@@ -9,6 +9,6 @@ namespace _01_eshopQuery.Contracts.Product
     public interface IProductQuery
     {
         List<ProductQueryModel> GetLatestArrivals();
-
+        List<ProductQueryModel> Search(string value);
     }
 }

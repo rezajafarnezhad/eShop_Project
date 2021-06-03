@@ -40,7 +40,7 @@ namespace _01_eshopQuery.Query
                 Slug = c.Slug
 
 
-            }).ToList();
+            }).AsNoTracking().ToList();
         }
 
 
@@ -153,7 +153,7 @@ namespace _01_eshopQuery.Query
                     Description = c.Description,
                     MetaDescription = c.MetaDescription
 
-                }).FirstOrDefault(c => c.Slug == slug);
+                }).AsNoTracking().FirstOrDefault(c => c.Slug == slug);
 
 
             foreach (var product in category.Products)
@@ -181,6 +181,16 @@ namespace _01_eshopQuery.Query
             }
 
             return category;
+        }
+
+        public List<ProductCategoryQueryModel> GetCategoryForMenue()
+        {
+            return _context.ProductCategories.Select(c => new ProductCategoryQueryModel()
+            {
+                Id = c.Id,
+                Slug = c.Slug,
+                Name = c.Name,
+            }).AsNoTracking().ToList();
         }
     }
 }
