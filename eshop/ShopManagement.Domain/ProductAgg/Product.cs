@@ -41,8 +41,8 @@ namespace ShopManagement.Domain.ProductAgg
             MetaDescription = metaDescription;
             Slug = slug;
             CategoryId = categoryId;
-            
-            
+
+
         }
 
         public void Edit(string name, string code, string shortDescription, string description,
@@ -51,10 +51,15 @@ namespace ShopManagement.Domain.ProductAgg
         {
             Name = name;
             Code = code;
-            
+
             ShortDescription = shortDescription;
             Description = description;
-            this.picture = picture;
+
+            if (!string.IsNullOrWhiteSpace(picture))
+            {
+                this.picture = picture;
+            }
+
             this.pictureAlt = pictureAlt;
             this.pictureTitle = pictureTitle;
             KeyWords = keyWords;
@@ -65,6 +70,6 @@ namespace ShopManagement.Domain.ProductAgg
         }
 
 
-       
+
     }
 }

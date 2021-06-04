@@ -42,7 +42,6 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
@@ -125,7 +124,6 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -183,7 +181,6 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
-C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.Pipes.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\refs\System.Linq.dll
@@ -500,3 +497,6 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Menue\Default.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\SearchResult.cshtml.g.cs
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\System.IO.Pipelines.dll

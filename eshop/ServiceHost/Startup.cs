@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
+using _0_Framework.Application;
 
 namespace ServiceHost
 {
@@ -36,6 +37,9 @@ namespace ServiceHost
             ShopManagementBootstrapper.Configure(services, ConnectionString);
             DiscountManagemantBootstrapper.Configure(services, ConnectionString);
             InventoryManagemantBootstrapper.Configure(services, ConnectionString);
+
+
+            services.AddTransient<IFileUploader, FileUploade>();
 
             #endregion
 

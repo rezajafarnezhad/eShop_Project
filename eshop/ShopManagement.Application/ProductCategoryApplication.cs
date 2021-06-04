@@ -10,10 +10,11 @@ namespace ShopManagement.Application
     {
 
         private readonly IProductCategoryRepo _productCategoryRepo;
-
-        public ProductCategoryApplication(IProductCategoryRepo productCategoryRepo)
+        private readonly IFileUploader _fileUploader;
+        public ProductCategoryApplication(IProductCategoryRepo productCategoryRepo , IFileUploader fileUploader)
         {
             _productCategoryRepo = productCategoryRepo;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Create(CreateProductCategory command)
@@ -27,7 +28,7 @@ namespace ShopManagement.Application
 
             var Slug = command.Slug.Slugify();
 
-            var ProductCategory = new ProductCategory(command.Name, command.Description, command.picture, command.pictureAlt,
+            var ProductCategory = new ProductCategory(command.Name, command.Description, "", command.pictureAlt,
                 command.pictureTitle, command.KeyWords, command.MetaDescription, Slug);
 
             _productCategoryRepo.Create(ProductCategory);
@@ -52,7 +53,15 @@ namespace ShopManagement.Application
             }
 
             var Slug = command.Slug.Slugify();
-            ProductCategory.Edit(command.Name, command.Description, command.picture, command.pictureAlt,
+
+
+            var picpath = $"{command.Slug}";
+
+         
+
+            var filename = _fileUploader.Upload(command.picture, picpath) ;
+
+            ProductCategory.Edit(command.Name, command.Description, filename, command.pictureAlt,
                 command.pictureTitle, command.KeyWords, command.MetaDescription, Slug);
             _productCategoryRepo.Save();
             return operationResult.Succeeded();

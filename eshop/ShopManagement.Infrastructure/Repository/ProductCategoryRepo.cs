@@ -20,7 +20,10 @@ namespace ShopManagement.Infrastructure.Repository
             _context = context;
         }
 
-
+        public string GetcategorySlugeby(long id)
+        {
+            return _context.ProductCategories.Select(c => new { c.Id, c.Slug }).FirstOrDefault(c => c.Id == id).Slug;
+        }
 
         public EditProductCategory GetForEdit(long id)
         {
@@ -32,7 +35,7 @@ namespace ShopManagement.Infrastructure.Repository
                 KeyWords = productCategory.KeyWords,
                 MetaDescription = productCategory.MetaDescription,
                 Name = productCategory.Name,
-                picture = productCategory.picture,
+              //  picture = productCategory.picture,
                 pictureAlt = productCategory.pictureAlt,
                 pictureTitle = productCategory.pictureTitle,
                 Slug = productCategory.Slug

@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,13 +11,13 @@ namespace ShopManagement.Application.Contract.ProductCategory
 {
     public class CreateProductCategory
     {
-        
+
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Name { get; set; }
         public string Description { get; set; }
 
-        [Required(ErrorMessage = ValidationMessages.IsRequired)]
-        public string picture { get; set; }
+        
+        public IFormFile picture { get; set; }
 
         public string pictureAlt { get; set; }
         public string pictureTitle { get; set; }

@@ -8,10 +8,59 @@
     ".NETCoreApp,Version=v5.0": {
       "0_Framework/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.6",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.6"
         },
         "runtime": {
           "0_Framework.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.6",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/5.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.621.22305"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
+          "Microsoft.Net.Http.Headers": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Abstractions.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Routing.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Routing.Abstractions.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/5.0.6": {
@@ -43,7 +92,7 @@
       "Microsoft.EntityFrameworkCore.Analyzers/5.0.6": {},
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "5.0.0"
+          "Microsoft.Extensions.Primitives": "5.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {
@@ -58,7 +107,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
           "Microsoft.Extensions.Options": "5.0.0",
-          "Microsoft.Extensions.Primitives": "5.0.0"
+          "Microsoft.Extensions.Primitives": "5.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
@@ -111,7 +160,7 @@
       "Microsoft.Extensions.Options/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Primitives": "5.0.0"
+          "Microsoft.Extensions.Primitives": "5.0.1"
         },
         "runtime": {
           "lib/net5.0/Microsoft.Extensions.Options.dll": {
@@ -120,14 +169,27 @@
           }
         }
       },
-      "Microsoft.Extensions.Primitives/5.0.0": {
+      "Microsoft.Extensions.Primitives/5.0.1": {
         "runtime": {
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "fileVersion": "5.0.521.16609"
           }
         }
       },
+      "Microsoft.Net.Http.Headers/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.Buffers": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
+        }
+      },
+      "System.Buffers/4.5.0": {},
       "System.Collections.Immutable/5.0.0": {},
       "System.ComponentModel.Annotations/5.0.0": {},
       "System.Diagnostics.DiagnosticSource/5.0.1": {
@@ -137,7 +199,16 @@
             "fileVersion": "5.0.220.61120"
           }
         }
-      }
+      },
+      "System.IO.Pipelines/5.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        }
+      },
+      "System.Text.Encodings.Web/4.5.0": {}
     }
   },
   "libraries": {
@@ -145,6 +216,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IkuRKkTFEbO30FwfCVuL0piikRBK/kgsaLbfbeUg8Rejpe5nCRUDZ3RDLzaW0FPMZxdb1opQ/zBYibItL1AezQ==",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MfpLQRQK/iBZLiaRgPd4dNq4REVbycYH9apU0i18UWQsqZt2Oa0+gZRnz8j4eDCzzCwQSoVXtuCtuCdEnIk9vg==",
+      "path": "microsoft.aspnetcore.http.features/5.0.6",
+      "hashPath": "microsoft.aspnetcore.http.features.5.0.6.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KvSgkNkWnK4Ikmz1QmFOD32PynAvVibY6piwcRysgWFLuzkjgERVJ6YNOR6/Tegnb79+xG7GzP92bA7RKFl+sw==",
+      "path": "microsoft.aspnetcore.mvc.abstractions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Routing.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dqnRARq+DBBH0mgYStRhKyapkPnIu1+sTgesv9dFVrsbN3IKlpTuAaRwAC1G9sHo2MVi5J5EMOtscDgmqnjhUg==",
+      "path": "microsoft.aspnetcore.routing.abstractions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/5.0.6": {
       "type": "package",
@@ -216,12 +315,26 @@
       "path": "microsoft.extensions.options/5.0.0",
       "hashPath": "microsoft.extensions.options.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Primitives/5.0.0": {
+    "Microsoft.Extensions.Primitives/5.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cI/VWn9G1fghXrNDagX9nYaaB/nokkZn0HYAawGaELQrl8InSezfe9OnfPZLcJq3esXxygh3hkq2c3qoV3SDyQ==",
-      "path": "microsoft.extensions.primitives/5.0.0",
-      "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+      "sha512": "sha512-5WPSmL4YeP7eW+Vc8XZ4DwjYWBAiSwDV9Hm63JJWcz1Ie3Xjv4KuJXzgCstj48LkLfVCYa7mLcx7y+q6yqVvtw==",
+      "path": "microsoft.extensions.primitives/5.0.1",
+      "hashPath": "microsoft.extensions.primitives.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.Net.Http.Headers/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yFn57woR2lfjUfcoqrc+F8hbmsjTLNu+14FIiGGMUTfvQtZE6xJRwFntp4oMJi99KpMHYX5MOS0mmjRSEwGtLw==",
+      "path": "microsoft.net.http.headers/2.2.0",
+      "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
     },
     "System.Collections.Immutable/5.0.0": {
       "type": "package",
@@ -243,6 +356,20 @@
       "sha512": "sha512-uXQEYqav2V3zP6OwkOKtLv+qIi6z3m1hsGyKwXX7ZA7htT4shoVccGxnJ9kVRFPNAsi1ArZTq2oh7WOto6GbkQ==",
       "path": "system.diagnostics.diagnosticsource/5.0.1",
       "hashPath": "system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "path": "system.io.pipelines/5.0.1",
+      "hashPath": "system.io.pipelines.5.0.1.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JF+wDdfFiRl3rz3dPMfR6aR568AW2J5CUMmhSflgHDz4zbVK4/00ax8UHnHyEMvblPewgNugjuA4oyoL8Pex2g==",
+      "path": "system.text.encodings.web/4.5.0",
+      "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     }
   }
 }

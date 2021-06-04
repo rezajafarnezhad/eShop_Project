@@ -38,7 +38,7 @@ namespace ShopManagement.Infrastructure.Repository
                 KeyWords = product.KeyWords,
                 Name = product.Name,
                 Slug = product.Slug,
-                picture = product.picture,
+               // picture = product.picture,
                 pictureAlt = product.pictureAlt,
                 pictureTitle = product.pictureTitle,
 
@@ -55,6 +55,12 @@ namespace ShopManagement.Infrastructure.Repository
                 Name = c.Name
 
             }).ToList();
+        }
+
+        public Product GetProductWithCategory(long id)
+        {
+            return _context.Products.Include(c => c.ProductCategory)
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public List<ProductViewModel> Search(ProductSearchModel searchModel)

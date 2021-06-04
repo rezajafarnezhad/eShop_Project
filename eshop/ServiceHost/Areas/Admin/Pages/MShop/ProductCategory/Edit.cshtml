@@ -11,7 +11,8 @@
       method="post"
       data-ajax="true"
       data-callback=""
-      data-action="Refresh">
+      data-action="Refresh"
+      enctype="multipart/form-data">
     <div class="modal-body">
         <div class="row">
             <div class="col-md-6">
@@ -33,7 +34,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="picture" class="control-label">عکس</label>
-                    <input type="text" class="form-control" asp-for="picture" accept="image/*">
+                    <input type="file"  class="form-control" asp-for="@Model.picture" accept="image/*">
                     <span asp-validation-for="picture" class="error"></span>
                 </div>
             </div>

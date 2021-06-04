@@ -57,7 +57,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
             EditProduct.Categories = _productCategoryApplication.GetProductCategories();
             return Partial("./Edit", EditProduct);
         }
-
+        
 
         public JsonResult OnPostEdit(EditProduct command)
         {
