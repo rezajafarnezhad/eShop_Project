@@ -31,14 +31,18 @@ namespace ShopManagement.Infrastructure.Repository
             {
                 Id = Productpic.Id,
                 PictureAlt = Productpic.PictureAlt,
-                PictureName = Productpic.PictureName,
                 PictureTitle = Productpic.PictureTitle,
                 ProductId = Productpic.ProductId
             };
 
         }
 
-
+        public ProductPicture GetWithProductAndcategorybyId(long id)
+        {
+            return _context.ProductPictures.Include(c => c.Product)
+                .ThenInclude(c => c.ProductCategory)
+                .FirstOrDefault(c => c.Id == id);
+        }
 
         public List<ProductPictureViewModel> Search(ProductPictureSearchModel searchModel)
         {

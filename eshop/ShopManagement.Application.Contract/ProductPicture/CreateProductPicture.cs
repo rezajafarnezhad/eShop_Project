@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using Microsoft.AspNetCore.Http;
 using ShopManagement.Application.Contract.Product;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ namespace ShopManagement.Application.Contract.ProductPicture
     {
         [Range(1,100000,ErrorMessage =ValidationMessages.IsRequired)]
         public long ProductId { get;  set; }
-        [Required(ErrorMessage =ValidationMessages.IsRequired)]
-        public string PictureName { get;  set; }
+
+       // [Required(ErrorMessage =ValidationMessages.IsRequired)]
+        public IFormFile PictureName { get;  set; }
+
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
 
         public string PictureAlt { get;  set; }

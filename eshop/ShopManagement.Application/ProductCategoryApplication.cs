@@ -26,9 +26,18 @@ namespace ShopManagement.Application
                 return operationResult.Failed(ApplicationMessage.duplicated);
             }
 
+            
             var Slug = command.Slug.Slugify();
 
-            var ProductCategory = new ProductCategory(command.Name, command.Description, "", command.pictureAlt,
+
+            var picpath = $"{command.Slug}";
+
+
+
+            var Picturename = _fileUploader.Upload(command.picture, picpath);
+
+
+            var ProductCategory = new ProductCategory(command.Name, command.Description, Picturename, command.pictureAlt,
                 command.pictureTitle, command.KeyWords, command.MetaDescription, Slug);
 
             _productCategoryRepo.Create(ProductCategory);
@@ -59,9 +68,9 @@ namespace ShopManagement.Application
 
          
 
-            var filename = _fileUploader.Upload(command.picture, picpath) ;
+            var Picturename = _fileUploader.Upload(command.picture, picpath) ;
 
-            ProductCategory.Edit(command.Name, command.Description, filename, command.pictureAlt,
+            ProductCategory.Edit(command.Name, command.Description, Picturename, command.pictureAlt,
                 command.pictureTitle, command.KeyWords, command.MetaDescription, Slug);
             _productCategoryRepo.Save();
             return operationResult.Succeeded();

@@ -12,16 +12,21 @@ namespace ShopManagement.Application
     public class SlideApplication : ISlideApplication
     {
         private readonly ISlideRepo _slideRepo;
+        private readonly IFileUploader _fileUploader;
 
-        public SlideApplication(ISlideRepo slideRepo)
+        public SlideApplication(ISlideRepo slideRepo, IFileUploader fileUploader)
         {
             _slideRepo = slideRepo;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Create(CreateSlide command)
         {
             OperationResult operationResult = new OperationResult();
-            var slide = new Slide(command.Picture, command.PictureAlt, command.PictureTitle, command.Heading, command.Title, command.Text,
+
+            var Path = "Slides";
+            var picturePath = _fileUploader.Upload(command.Picture, Path);
+            var slide = new Slide(picturePath, command.PictureAlt, command.PictureTitle, command.Heading, command.Title, command.Text,
                 command.link, command.btnText);
             _slideRepo.Create(slide);
             _slideRepo.Save();
@@ -39,7 +44,11 @@ namespace ShopManagement.Application
                 return operationResult.Failed(ApplicationMessage.recordNotFound);
             }
 
-            slide.Edit(command.Picture, command.PictureAlt, command.PictureTitle, command.Heading, command.Title, command.Text,
+
+            var Path = "Slides";
+            var picturePath = _fileUploader.Upload(command.Picture, Path);
+
+            slide.Edit(picturePath, command.PictureAlt, command.PictureTitle, command.Heading, command.Title, command.Text,
               command.link, command.btnText);
 
             _slideRepo.Save();

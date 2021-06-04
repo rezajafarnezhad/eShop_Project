@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\ProductPicture\Slides\" />
     <Folder Include="wwwroot\ProductPicture\برازوی-برند\" />
-    <Folder Include="wwwroot\ProductPicture\سیکو-برند\" />
   </ItemGroup>
 
 </Project>

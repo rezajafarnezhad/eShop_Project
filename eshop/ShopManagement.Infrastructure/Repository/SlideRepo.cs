@@ -28,7 +28,6 @@ namespace ShopManagement.Infrastructure.Repository
             return new EditSlide()
             {
                 Id = slide.Id,
-                Picture = slide.Picture,
                 btnText = slide.btnText,
                 Heading = slide.Heading,
                 PictureAlt = slide.PictureAlt,

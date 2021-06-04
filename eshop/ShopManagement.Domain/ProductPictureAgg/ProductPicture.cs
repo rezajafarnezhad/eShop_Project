@@ -15,7 +15,7 @@ namespace ShopManagement.Domain.ProductPictureAgg
         public string PictureAlt { get; private set; }
         public string PictureTitle { get; private set; }
         public bool IsRemove { get; private set; }
-        
+
         public Product Product { get; private set; }
 
         public ProductPicture(long productId, string pictureName, string pictureAlt, string pictureTitle)
@@ -31,7 +31,13 @@ namespace ShopManagement.Domain.ProductPictureAgg
         public void Edit(long productId, string pictureName, string pictureAlt, string pictureTitle)
         {
             ProductId = productId;
-            PictureName = pictureName;
+
+            if (!string.IsNullOrWhiteSpace(pictureName))
+            {
+                PictureName = pictureName;
+
+            }
+
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
         }

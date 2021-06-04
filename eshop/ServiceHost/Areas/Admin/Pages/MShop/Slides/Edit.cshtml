@@ -15,7 +15,8 @@
       method="post"
       data-ajax="true"
       data-callback=""
-      data-action="Refresh">
+      data-action="Refresh"
+      enctype="multipart/form-data">
     <div class="modal-body">
 
         <input type="hidden" asp-for="@Model.Id" value="@Model.Id" />
@@ -23,7 +24,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="@Model.Picture" class="control-label">تصویر اسلایدر</label>
-                    <input type="text" class="form-control" asp-for="@Model.Picture">
+                    <input type="file" class="form-control" asp-for="@Model.PictureAlt" accept="Images/*">
                     <span asp-validation-for="@Model.Picture" class="error"></span>
                 </div>
             </div>
