@@ -13,23 +13,21 @@
                     <div class="row row-10 masonry-category-layout">
                         @foreach (var item in Model)
                         {
-                            <div class="col-lg-4 col-sm-6 grid-item">
-                                <!--=======  single category item  =======-->
-                                <div class="single-category-item">
-                                    <div class="single-category-item__image">
-                                        <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
-                                            <img src="/ProductPicture/@item.picture" class="img-fluid" alt="@item.pictureAlt" title="@item.pictureTitle">
-                                        </a>
-                                    </div>
-                                    <div class="single-category-item__content">
-                                        <h3 class="title">@item.Name</h3>
-                                        <a href="@item.Slug">
-                                            <i class="ion-android-arrow-dropleft-circle"></i>
-                                        </a>
-                                    </div>
+                        <div class="col-lg-4 col-sm-6 grid-item">
+                            <div class="single-category-item">
+                                <div class="single-category-item__image">
+                                    <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
+                                        <img src="~/ProductPicture/@item.picture" class="img-fluid" alt="@item.pictureAlt" title="@item.pictureTitle" />
+                                    </a>
                                 </div>
-                                <!--=======  End of single category item  =======-->
+                                <div class="single-category-item__content">
+                                    <h3 class="title">@item.Name</h3>
+                                    <a asp-page="/ProductCategory" asp-route-id="@item.Slug">
+                                        <i class="ion-android-arrow-dropleft-circle"></i> خرید
+                                    </a>
+                                </div>
                             </div>
+                        </div>
                         }
 
                     </div>

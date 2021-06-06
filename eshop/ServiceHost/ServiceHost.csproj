@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\ProductPicture\برازوی-برند\**" />
+    <Content Remove="wwwroot\ProductPicture\برازوی-برند\**" />
+    <EmbeddedResource Remove="wwwroot\ProductPicture\برازوی-برند\**" />
+    <None Remove="wwwroot\ProductPicture\برازوی-برند\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
       <PrivateAssets>all</PrivateAssets>
@@ -18,11 +25,6 @@
     <ProjectReference Include="..\DiscountManagement.Configuration\DiscountManagement.Configuration.csproj" />
     <ProjectReference Include="..\InventoryManagement.Configuration\InventoryManagement.Configuration.csproj" />
     <ProjectReference Include="..\ShopManagement.Configuration\ShopManagement.Configuration.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\ProductPicture\Slides\" />
-    <Folder Include="wwwroot\ProductPicture\برازوی-برند\" />
   </ItemGroup>
 
 </Project>

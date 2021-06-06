@@ -39,8 +39,7 @@ namespace ShopManagement.Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("KeyWords")
                         .IsRequired()
@@ -49,17 +48,17 @@ namespace ShopManagement.Infrastructure.Migrations
 
                     b.Property<string>("MetaDescription")
                         .IsRequired()
-                        .HasMaxLength(655)
-                        .HasColumnType("nvarchar(655)");
+                        .HasMaxLength(2400)
+                        .HasColumnType("nvarchar(2400)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(455)
+                        .HasColumnType("nvarchar(455)");
 
                     b.Property<string>("ShortDescription")
-                        .HasMaxLength(560)
-                        .HasColumnType("nvarchar(560)");
+                        .HasMaxLength(2400)
+                        .HasColumnType("nvarchar(2400)");
 
                     b.Property<string>("Slug")
                         .IsRequired()

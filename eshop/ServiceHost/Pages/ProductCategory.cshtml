@@ -8,21 +8,16 @@
     <div class="container wide">
         <div class="row">
             <div class="col-lg-12">
-                <!--=======  breadcrumb wrpapper  =======-->
                 <div class="breadcrumb-wrapper breadcrumb-bg">
-                    <!--=======  breadcrumb content  =======-->
                     <div class="breadcrumb-content">
-                        <h2 class="breadcrumb-content__title">لیست محصولات (@Model.ProductCategoryWithProduct.Name)</h2>
+                        <h1 class="breadcrumb-content__title">لیست محصولات (@Model.ProductCategoryWithProduct.Name)</h1>
+                        <h2>@Model.ProductCategoryWithProduct.Description</h2>
                         <ul class="breadcrumb-content__page-map">
                             <li><a asp-page="./Index">صفحه اصلی</a></li>
-                            <li class="active">@Model.ProductCategoryWithProduct.Name</li>
+                            <li class="active">@Model.ProductCategoryWithProduct.Name (@Model.ProductCategoryWithProduct.Products.Count محصول)</li>
                         </ul>
-                        <br />
-                        <p>@Model.ProductCategoryWithProduct.Description (@Model.ProductCategoryWithProduct.Products.Count() محصول )</p>
                     </div>
-                    <!--=======  End of breadcrumb content  =======-->
                 </div>
-                <!--=======  End of breadcrumb wrpapper  =======-->
             </div>
         </div>
     </div>
@@ -89,7 +84,7 @@
                                                             </div>
                                                         }
 
-                                                        <a href="single-product.html">
+                                                        <a asp-page="Product" asp-route-id="@Product.Slug">
                                                             <img src="/ProductPicture/@Product.Picture" title="@Product.PictureTitle" class="img-fluid"
                                                                  alt="@Product.PictureAlt">
 
@@ -112,7 +107,7 @@
                                                         </div>
 
                                                         <h3 class="single-grid-product__title">
-                                                            <a asp-page="/ProductDetails">
+                                                            <a asp-page="Product" asp-route-id="@Product.Slug">
                                                                 @Product.Name
                                                             </a>
                                                         </h3>

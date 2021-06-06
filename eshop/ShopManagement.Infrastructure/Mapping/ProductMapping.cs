@@ -16,16 +16,16 @@ namespace ShopManagement.Infrastructure.Mapping
             builder.ToTable("Products");
 
             builder.HasKey(c => c.Id);
-            builder.Property(c => c.Name).HasMaxLength(255).IsRequired();
+            builder.Property(c => c.Name).HasMaxLength(455).IsRequired();
             builder.Property(c => c.Slug).HasMaxLength(455).IsRequired();
-            builder.Property(c => c.Description).HasMaxLength(1000).IsRequired();
-            builder.Property(c => c.ShortDescription).HasMaxLength(560);
+            builder.Property(c => c.Description).IsRequired();
+            builder.Property(c => c.ShortDescription).HasMaxLength(2400);
             builder.Property(c => c.picture).HasMaxLength(1200);
             builder.Property(c => c.pictureTitle).HasMaxLength(255);
             builder.Property(c => c.pictureAlt).HasMaxLength(255);
             builder.Property(c => c.Code).HasMaxLength(255).IsRequired();
             builder.Property(c => c.KeyWords).HasMaxLength(555).IsRequired();
-            builder.Property(c => c.MetaDescription).HasMaxLength(655).IsRequired();
+            builder.Property(c => c.MetaDescription).HasMaxLength(2400).IsRequired();
             
 
 

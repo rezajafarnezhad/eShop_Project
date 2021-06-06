@@ -500,3 +500,4 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Product.cshtml.g.cs

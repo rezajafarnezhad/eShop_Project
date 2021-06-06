@@ -67,30 +67,37 @@
                                     <th>تاریخ درج</th>
                                     <th>عملیات</th>
                                     
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.Products)
                                 {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    <td>
-                                        <img src="~/ProductPicture/@item.picture" style="width: 70px; height: 70px" />
-                                    </td>
-                                    <td>@item.Name</td>
-                                    <td>@item.Code</td>
-                                    
-                                    <td>@item.CategoryName</td>
-                        
-                                    <td>@item.CreationDate</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-warning waves-effect waves-light m-b-5"
-                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                            <i class="fa fa-edit"></i> ویرایش
-                                        </a>
-                                    </td>
-                                
-                                </tr>
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>
+                                            <img src="~/ProductPicture/@item.picture" style="width: 70px; height: 70px" />
+                                        </td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Code</td>
+
+                                        <td>@item.CategoryName</td>
+
+                                        <td>@item.CreationDate</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-warning waves-effect waves-light m-b-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                                <i class="fa fa-edit"></i> ویرایش
+                                            </a>
+
+                                            <a class="btn btn-sm btn-info waves-effect waves-light m-b-5"
+                                               href="/Admin/MShop/ProductPicture?SearchModel.ProductId=@item.Id">
+                                                <i class="fa fa-eye"></i> گالری تصاویر 
+                                            </a>
+
+                                        </td>
+                                       
+                                    </tr>
                                 }
                             </tbody>
                         </table>

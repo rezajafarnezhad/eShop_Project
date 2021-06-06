@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
+using ShopManagement.Application.Contract.ProductPicture;
 
 namespace ServiceHost.Areas.Admin.Pages.MShop.Product
 {
@@ -21,6 +22,9 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
         private readonly IProductApplication _productApplication;
         private readonly IProductCategoryApplication _productCategoryApplication;
 
+
+        public ProductPictureSearchModel PictureSearchModel;
+
         public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication)
         {
             _productApplication = productApplication;
@@ -29,6 +33,9 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
 
         public void OnGet(ProductSearchModel searchModel)
         {
+
+            
+
             ProductCategories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name");
             Products = _productApplication.Search(searchModel);
 

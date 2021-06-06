@@ -10,5 +10,8 @@ namespace _01_eshopQuery.Contracts.Product
     {
         List<ProductQueryModel> GetLatestArrivals();
         List<ProductQueryModel> Search(string value);
+        ProductQueryModel GetDetails(string slug);
+
+
     }
 }

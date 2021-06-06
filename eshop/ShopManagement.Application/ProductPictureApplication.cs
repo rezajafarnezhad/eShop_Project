@@ -29,7 +29,7 @@ namespace ShopManagement.Application
 
             var Product = _productRepo.GetProductWithCategory(Command.ProductId);
 
-            var path = $"{Product.ProductCategory.Slug}/{Product.Slug}";
+            var path = $"{Product.ProductCategory.Slug}//{Product.Slug}";
 
             var PicturePath = _fileUploader.Upload(Command.PictureName, path);
 
@@ -53,7 +53,7 @@ namespace ShopManagement.Application
 
            
 
-            var path = $"{productpic.Product.ProductCategory.Slug}/{productpic.Product.Slug}";
+            var path = $"{productpic.Product.ProductCategory.Slug}//{productpic.Product.Slug}";
 
             var PicturePath = _fileUploader.Upload(Command.PictureName, path);
 

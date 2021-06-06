@@ -140,7 +140,7 @@ namespace _01_eshopQuery.Query
 
 
 
-            var category = _context.ProductCategories.Where(c => c.ShowinMainPage)
+            var category = _context.ProductCategories
                 .Include(c => c.Products)
                 .ThenInclude(c => c.ProductCategory)
                 .Select(c => new ProductCategoryQueryModel()
