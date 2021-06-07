@@ -28,6 +28,8 @@ namespace _01_eshopQuery.Contracts.Product
         public string KeyWords { get; set; }
         public string MetaDescription { get; set; }
         public List<ProductPicturesQueryModel> ProductPictures { get; set; }
+
+        public List<CommentQueryModel> Comments { get; set; }
     }
 
     public class ProductPicturesQueryModel
@@ -39,6 +41,11 @@ namespace _01_eshopQuery.Contracts.Product
         public bool IsRemove { get; set; }
 
     }
-
+    public class CommentQueryModel
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Message { get; set; }
+    }
 
 }

@@ -23,7 +23,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
         private readonly IProductCategoryApplication _productCategoryApplication;
 
 
-        public ProductPictureSearchModel PictureSearchModel;
+        
 
         public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication)
         {

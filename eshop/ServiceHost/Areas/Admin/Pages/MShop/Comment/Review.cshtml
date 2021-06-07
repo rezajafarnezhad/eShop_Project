@@ -1,0 +1,13 @@
+﻿
+@model ShopManagement.Application.Contract.Comment.CommentReview
+
+<h3 class="text-center">مشاهده کامت</h3>
+<hr />
+<div class="row">
+    <form asp-page="Detail">
+        <div class="form-group">
+            <textarea rows="20" asp-for="@Model.Message" class="form-control" readonly></textarea>
+        </div>
+    </form>
+</div>
+

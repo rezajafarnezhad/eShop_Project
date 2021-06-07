@@ -26,11 +26,12 @@ namespace ShopManagement.Infrastructure.Mapping
             builder.Property(c => c.Code).HasMaxLength(255).IsRequired();
             builder.Property(c => c.KeyWords).HasMaxLength(555).IsRequired();
             builder.Property(c => c.MetaDescription).HasMaxLength(2400).IsRequired();
-            
+
 
 
             builder.HasOne(c => c.ProductCategory).WithMany(c => c.Products).HasForeignKey(c => c.CategoryId);
             builder.HasMany(c => c.ProductPictures).WithOne(c => c.Product).HasForeignKey(c => c.ProductId);
+            builder.HasMany(c => c.Comments).WithOne(c => c.Product).HasForeignKey(c => c.ProductId);
 
         }
     }
