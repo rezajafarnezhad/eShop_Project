@@ -1,6 +1,6 @@
 ﻿
 
-@model List<_01_eshopQuery.Contracts.ProductCategory.ProductCategoryQueryModel>
+@model _01_eshopQuery.MenueModel
 
 <div class="header-area header-sticky">
     <div class="container">
@@ -29,7 +29,7 @@
                                             <a href="#"> برند ها</a>
                                             <ul class="sub-menu">
 
-                                                @foreach (var item in Model)
+                                                @foreach (var item in Model.ProductCategories)
                                                 {
                                                     <li>
                                                         <a asp-page="ProductCategory" asp-route-id="@item.Slug">@item.Name</a>
@@ -43,12 +43,14 @@
                                 <li class="menu-item-has-children">
                                     <a href="blog-left-sidebar.html"><i class="fa fa-book"></i>  بلاگ</a>
                                     <ul class="sub-menu">
-                                        <li>
-                                            <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                                        </li>
+                                        @foreach (var item in Model.ArticleCategories)
+                                        {
+                                            <li>
+                                                <a asp-page="ArticleCategory" asp-route-id="@item.Slug">@item.Name</a>
+                                            </li>
+                                        }
+
+                                        
                                     </ul>
                                 </li>
 
@@ -260,7 +262,7 @@
                             <li class="menu-item-has-children">
                                 <a href="#">برند ها</a>
                                 <ul class="sub-menu">
-                                    @foreach (var item in Model)
+                                    @foreach (var item in Model.ProductCategories)
                                     {
                                         <li>
                                             <a asp-page="ProductCategory" asp-route-id="@item.Slug">@item.Name</a>
@@ -277,12 +279,15 @@
                     <li class="menu-item-has-children">
                         <a href="#">بلاگ</a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-                            </li>
-                            <li>
-                                <a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-                            </li>
+                            @foreach (var item in Model.ArticleCategories)
+                            {
+                                <li>
+                                    <a asp-page="ArticleCategory" asp-route-id="@item.Slug">@item.Name</a>
+                                </li>
+                            }
+
+                         
+                            
                         </ul>
                     </li>
                     <li class="menu-item-has-children">

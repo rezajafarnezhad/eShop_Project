@@ -9,7 +9,7 @@ namespace _01_eshopQuery.Contracts.ProductCategory
     public interface IProductCategoryQuery
     {
         List<ProductCategoryQueryModel> GetProductCategories();
-        List<ProductCategoryQueryModel> GetCategoryForMenue();
+        
         List<ProductCategoryQueryModel> GetProductCategoryWithProducts(); 
         ProductCategoryQueryModel GetProductCategoryWithProducts(string slug);
 

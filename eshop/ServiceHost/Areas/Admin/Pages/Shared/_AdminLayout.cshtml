@@ -10,6 +10,7 @@
 
     <link rel="shortcut icon" href="images/favicon_1.ico">
 
+   
 
     <link href="~/AdminPanel/assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -239,6 +240,7 @@
     <script src="~/AdminPanel/assets/js/persian-date.min.js"></script>
     <script src="~/AdminPanel/assets/js/persian-datepicker.min.js"></script>
 
+
     @RenderSection("Sc", false)
 
     <script>
@@ -249,6 +251,11 @@
         });
     </script>
 
+    <script>
+        $(function () {
+            $('#Content').ckeditor();
+        });
+    </script>
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->
     <!-- Counter Up -->

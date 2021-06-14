@@ -19,7 +19,7 @@ namespace ShopManagement.Infrastructure.Repository
         {
             _context = context;
         }
-
+        
         public List<CommentViewModel> Comments()
         {
             return _context.Comments.Include(c => c.Product).Select(c => new CommentViewModel()

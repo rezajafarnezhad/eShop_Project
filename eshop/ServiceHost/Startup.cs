@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
 using _0_Framework.Application;
+using BlogManagementBootstrapper;
 
 namespace ServiceHost
 {
@@ -37,6 +38,7 @@ namespace ServiceHost
             ShopManagementBootstrapper.Configure(services, ConnectionString);
             DiscountManagemantBootstrapper.Configure(services, ConnectionString);
             InventoryManagemantBootstrapper.Configure(services, ConnectionString);
+            blogManagementBootstrapper.Configure(services, ConnectionString);
 
 
             services.AddTransient<IFileUploader, FileUploade>();

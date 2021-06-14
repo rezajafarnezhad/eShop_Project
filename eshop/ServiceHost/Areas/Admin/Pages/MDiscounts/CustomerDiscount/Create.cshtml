@@ -56,10 +56,25 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
         <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
     </div>
 </form>
+
+@section SC{
+
+    <script src="~/AdminPanel/js/jquery-1.10.2.js"></script>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckeditor/adapters/jquery.js"></script>
+
+    <script>
+        $(function () {
+            $('#Content').ckeditor();
+        });
+    </script>
+
+}

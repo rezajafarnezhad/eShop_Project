@@ -174,13 +174,15 @@ namespace _01_eshopQuery.Query
                     PictureAlt = c.pictureAlt,
                     PictureTitle = c.pictureTitle,
                     Slug = c.Slug,
-                    ShortDescription = c.ShortDescription
+                    ShortDescription = c.ShortDescription,
+                    KeyWords = c.KeyWords
+
 
                 }).AsNoTracking();
 
             if (!string.IsNullOrWhiteSpace(value))
             {
-                query = query.Where(c => c.Name.Contains(value) || c.ShortDescription.Contains(value));
+                query = query.Where(c => c.Name.Contains(value) || c.ShortDescription.Contains(value) || c.KeyWords.Contains(value));
             }
 
             var Products = query.OrderByDescending(c => c.Id).ToList();

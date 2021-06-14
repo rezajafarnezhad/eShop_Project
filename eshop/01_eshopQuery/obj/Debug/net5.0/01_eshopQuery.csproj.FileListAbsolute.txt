@@ -31,3 +31,9 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\DiscountManagement.Application.Contracts.pdb
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\DiscountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Domain.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\BlogManagement.Domain.pdb

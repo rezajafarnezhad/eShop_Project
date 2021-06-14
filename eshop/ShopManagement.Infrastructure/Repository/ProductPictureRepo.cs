@@ -43,10 +43,10 @@ namespace ShopManagement.Infrastructure.Repository
                 .ThenInclude(c => c.ProductCategory)
                 .FirstOrDefault(c => c.Id == id);
         }
-
+        
         public List<ProductPictureViewModel> Search(ProductPictureSearchModel searchModel)
         {
-            var query = _context.ProductPictures.Include(c=>c.Product).Select(c => new ProductPictureViewModel()
+            var query = _context.ProductPictures.Include(c => c.Product).Select(c => new ProductPictureViewModel()
             {
                 Id = c.Id,
                 CreationDate = c.CreationDate.ToFarsi(),
@@ -55,7 +55,7 @@ namespace ShopManagement.Infrastructure.Repository
                 ProductName = c.Product.Name,
                 ProductId = c.ProductId
             });
-            if (searchModel.ProductId !=0)
+            if (searchModel.ProductId != 0)
             {
                 query = query.Where(c => c.ProductId == searchModel.ProductId);
             }

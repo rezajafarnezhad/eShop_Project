@@ -1,0 +1,128 @@
+﻿@page "{id}"
+@model ServiceHost.Pages.ArticleCategoryModel
+@{
+    ViewData["Title"] = "فروشگاه آنلاین / مقالات ";
+
+}
+
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-wrapper breadcrumb-bg">
+                    <div class="breadcrumb-content">
+                        <h2 class="breadcrumb-content__title">مقالات گروه : @Model.ArticleCategory.Name</h2>
+                        <ul class="breadcrumb-content__page-map">
+                            <li>
+                                <a href="/">صفحه اصلی</a>
+                            </li>
+                            <li class="active">@Model.ArticleCategory.Name</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-wrapper">
+                    <div class="page-content-wrapper">
+                        <div class="row">
+                            <div class="col-lg-9 order-1 order-lg-1">
+                                <!--=======  blog page content  =======-->
+                                <div class="blog-page-content">
+                                    <div class="row">
+
+
+                                        @foreach (var item in Model.ArticleCategory.Articles)
+                                        {
+                                            <div class="col-md-6">
+                                                <!--=======  single blog post  =======-->
+                                                <div class="single-blog-post">
+                                                    <div class="single-blog-post__image">
+                                                        <a asp-page="Article" asp-route-id="@item.Slug">
+                                                            <img src="~/ProductPicture/@item.Picture"
+                                                                 class="img-fluid" alt="@item.PictureAlt" title="@item.PictureTitle">
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="single-blog-post__content">
+                                                        <h3 class="title">
+                                                            <a asp-page="Article" asp-route-id="@item.Slug">
+                                                               @item.Title
+                                                            </a>
+                                                        </h3>
+                                                        <p class="post-meta">
+                                                            <span class="date">انتشار : @item.PublishDate</span>
+                                                            
+                                                        </p>
+                                                        <p class="short-desc">
+                                                            @item.ShortDescription
+                                                        </p>
+                                                        <a href="blog-post-left-sidebar.html"
+                                                           class="blog-post-link">ادامه مطلب ....</a>
+                                                    </div>
+                                                </div>
+                                                <!--=======  End of single blog post  =======-->
+                                            </div>
+
+                                        }
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-3 order-2 order-lg-2">
+                                <div class="page-sidebar-wrapper">
+
+
+                                    @await Component.InvokeAsync("ArticleCategories")
+
+                                    <div class="single-sidebar-widget">
+
+                                        <h4 class="single-sidebar-widget__title">آخرین مقالات</h4>
+                                        <div class="block-container">
+
+                                            @foreach (var item in Model.LatestArrivalsArticle)
+                                            {
+                                                <div class="single-block d-flex">
+                                                    <div class="image">
+                                                        <a asp-page="Article" asp-route-id="@item.Slug">
+                                                            <img src="~/ProductPicture/@item.Picture"
+                                                                 class="img-fluid" alt="@item.PictureAlt" title="@item.PictureTitle">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>
+                                                            <a asp-page="Article" asp-route-id="@item.Slug">
+                                                                @item.Title
+                                                            </a> <span>@item.PublishDate</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            }
+
+
+                                        </div>
+
+                                        <!--=======  End of block container  =======-->
+                                    </div>
+
+                          
+                                </div>
+                                <!--=======  End of page sidebar wrapper  =======-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

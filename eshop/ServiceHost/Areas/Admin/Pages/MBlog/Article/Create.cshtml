@@ -1,0 +1,146 @@
+﻿@page
+@model ServiceHost.Areas.Admin.Pages.MBlog.Article.CreateModel
+
+@{
+    Layout = "Shared/_AdminLayout";
+    ViewData["title"] = "ایجاد مقاله";
+}
+
+<div class="modal-header">
+    <h4 class="modal-title">ایجاد گروه مقاله جدید</h4>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.Title" class="control-label">نام</label>
+                    <input type="text" class="form-control" asp-for="CreateArticle.Title">
+                    <span asp-validation-for="CreateArticle.Title" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.Slug" class="control-label">اسلاگ</label>
+                    <input type="text" class="form-control" asp-for="CreateArticle.Slug">
+                    <span asp-validation-for="CreateArticle.Slug" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.CategoryId" class="control-label">گروه</label>
+                    <select type="text" class="form-control" asp-for="CreateArticle.CategoryId" asp-items="@Model.Categories">
+                        <option value="0">گروه مقاله</option>
+                    </select>
+                    <span asp-validation-for="CreateArticle.CategoryId" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.Picture" class="control-label">تصویر</label>
+                    <input type="file" class="form-control" asp-for="CreateArticle.Picture" accept="image/*">
+                    <span asp-validation-for="CreateArticle.Picture" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.PictureAlt" class="control-label">Alt</label>
+                    <input type="text" class="form-control" asp-for="CreateArticle.PictureAlt">
+                    <span asp-validation-for="CreateArticle.PictureAlt" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.PictureTitle" class="control-label">عنوان تصویر</label>
+                    <input type="text" class="form-control" asp-for="CreateArticle.PictureTitle">
+                    <span asp-validation-for="CreateArticle.PictureTitle" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.ShortDescription" class="control-label">توضیح کوتاه</label>
+                    <textarea type="text" class="form-control" asp-for="CreateArticle.ShortDescription"
+                              onchange="fillField('ShortDescription', 'MetaDescription')"></textarea>
+                    <span asp-validation-for="CreateArticle.ShortDescription" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.MetaDescription" class="control-label">توضیح متا</label>
+                    <textarea type="text" class="form-control" asp-for="CreateArticle.MetaDescription"></textarea>
+                    <span asp-validation-for="CreateArticle.MetaDescription" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.KeyWords" class="control-label">کلمات کلیدی</label>
+                    <input onkeydown="myFunction()" type="text" class="form-control" asp-for="CreateArticle.KeyWords">
+                    <span asp-validation-for="CreateArticle.KeyWords" class="error"></span>
+                    <p style="color:green" id="Message"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.CanonicalAddress" class="control-label">کنونیکال</label>
+                    <input type="text" class="form-control" asp-for="CreateArticle.CanonicalAddress">
+                    <span asp-validation-for="CreateArticle.CanonicalAddress" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.PublishDate" class="control-label">تاریخ انتشار</label>
+                    <input class="form-control persianDateInput" asp-for="CreateArticle.PublishDate" />
+                    <span asp-validation-for="CreateArticle.PublishDate" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="CreateArticle.Description" class="control-label">مقاله</label>
+                    <textarea id="Content" type="text" class="form-control" asp-for="CreateArticle.Description"></textarea>
+                    <span asp-validation-for="CreateArticle.Description" class="error"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+    </div>
+</form>
+
+@section SC{
+
+    <script src="~/AdminPanel/js/jquery-1.10.2.js"></script>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckeditor/adapters/jquery.js"></script>
+
+    <script>
+        $(function () {
+            $('#Content').ckeditor();
+        });
+    </script>
+
+    <script>
+        function myFunction() {
+            document.getElementById("Message").innerHTML = "توجه کلمات را با # از هم جدا کنید ";
+            $("#Message").fadeIn(1000);
+            $("#Message").fadeOut(10000);
+
+        }
+    </script>
+
+
+
+}

@@ -183,14 +183,6 @@ namespace _01_eshopQuery.Query
             return category;
         }
 
-        public List<ProductCategoryQueryModel> GetCategoryForMenue()
-        {
-            return _context.ProductCategories.Select(c => new ProductCategoryQueryModel()
-            {
-                Id = c.Id,
-                Slug = c.Slug,
-                Name = c.Name,
-            }).AsNoTracking().ToList();
-        }
+      
     }
 }
