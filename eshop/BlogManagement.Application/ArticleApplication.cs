@@ -66,7 +66,8 @@ namespace BlogManagement.Application
             var PicName = _fileUploader.Upload(command.Picture, path);
 
             Article.Edit(command.Title,command.ShortDescription,command.Description,PicName,command.PictureAlt,command.PictureTitle,
-                slug,command.KeyWords,command.MetaDescription,command.CanonicalAddress,command.PublishDate.ToGeorgianDateTime(),
+                slug,command.KeyWords,command.MetaDescription,command.CanonicalAddress,
+                command.PublishDate.ToGeorgianDateTime(),
                 command.CategoryId);
 
             _articleRepo.Save();

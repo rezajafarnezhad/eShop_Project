@@ -2,6 +2,9 @@
 
 @model _01_eshopQuery.MenueModel
 
+@inject _0_Framework.Application.IAuthHelper AuthHelper
+
+
 <div class="header-area header-sticky">
     <div class="container">
         <div class="row">
@@ -50,7 +53,7 @@
                                             </li>
                                         }
 
-                                        
+
                                     </ul>
                                 </li>
 
@@ -172,15 +175,25 @@
                                     <!-- settings menu -->
                                     <div class="settings-menu-wrapper" id="settings-menu-wrapper">
                                         <div class="single-settings-block">
-                                            <h2 class="title text-center">ورود به حساب کاربری</h2>
-                                            <ul>
-                                                <li>
-                                                    <a href="login-register.html">ثبت نام در فروشگاه</a>
-                                                </li>
-                                                <li>
-                                                    <a href="login-register.html">ورود به حساب</a>
-                                                </li>
-                                            </ul>
+                                            @if (AuthHelper.IsAuthenticated())
+                                            {
+                                                <h2 class="title text-center"> کاربر محترم @User.Identity.Name</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a asp-page="/Account" asp-page-handler="LogOut">خروج از حساب</a>
+                                                    </li>
+                                                </ul>
+                                            }
+                                            else
+                                            {
+                                                <h2 class="title text-center">حساب کاربری</h2>
+                                                <ul>
+                                                    <li>
+                                                        <a asp-page="/Account">ثبت نام / ورود در فروشگاه</a>
+                                                    </li>
+                                                </ul>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>
@@ -269,7 +282,7 @@
                                         </li>
                                     }
 
-                                    
+
 
                                 </ul>
                             </li>
@@ -286,21 +299,39 @@
                                 </li>
                             }
 
-                         
-                            
+
+
                         </ul>
                     </li>
+
                     <li class="menu-item-has-children">
-                        <a href="#">ورود به حساب </a>
+                        <a href="#">حساب کاربری</a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="login-register.html">ثبت نام</a>
-                            </li>
-                            <li>
-                                <a href="login-register.html">ورود به حساب </a>
-                            </li>
+
+                            @if (AuthHelper.IsAuthenticated())
+                            {
+
+                                <li>
+                                    <p>حساب کاربری @User.Identity.Name</p>
+                                </li>
+                                <li>
+                                    <a asp-page="/Account" asp-page-handler="LogOut">خروج از حساب</a>
+                                </li>
+
+                            }
+                            else
+                            {
+
+                                <li>
+                                    <a asp-page="/Account">ثبت نام / ورود در فروشگاه</a>
+                                </li>
+
+                            }
+
                         </ul>
                     </li>
+
+                 
 
                     <li class="menu-item-has-children">
                         <a href="#"><i class="fa fa-phone menueMobile"></i> تماس با فروشگاه </a>

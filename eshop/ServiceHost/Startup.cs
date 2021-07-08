@@ -14,6 +14,11 @@ using DiscountManagement.Configuration;
 using InventoryManagement.Configuration;
 using _0_Framework.Application;
 using BlogManagementBootstrapper;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using AccountManagement.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace ServiceHost
 {
@@ -32,18 +37,42 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
 
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    options.CheckConsentNeeded = context => true;
+            //    options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            //});
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
+                {
+                    o.LoginPath = new PathString("/Account");
+                    o.LogoutPath = new PathString("/Account");
+                    o.AccessDeniedPath = new PathString("/AccessDenied");
+                });
+
+
+            services.AddHttpContextAccessor();
+
             var ConnectionString = Configuration.GetConnectionString("EShopDB");
 
             #region IOC
+
             ShopManagementBootstrapper.Configure(services, ConnectionString);
             DiscountManagemantBootstrapper.Configure(services, ConnectionString);
             InventoryManagemantBootstrapper.Configure(services, ConnectionString);
             blogManagementBootstrapper.Configure(services, ConnectionString);
-
+            AccountManagementBootstrapper.Configure(services, ConnectionString);
 
             services.AddTransient<IFileUploader, FileUploade>();
-
+            services.AddTransient<IAuthHelper, AuthHelper>();
             #endregion
+
+          
+
+            services.AddSingleton(
+                HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+
 
             services.AddRazorPages();
         }
@@ -62,12 +91,18 @@ namespace ServiceHost
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseCookiePolicy();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

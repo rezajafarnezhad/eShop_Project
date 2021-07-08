@@ -1,7 +1,9 @@
 ﻿@page "{id}"
 @model ServiceHost.Pages.ProductCategoryPageModel
 @{
-    ViewData["Title"] = "فروشگاه آنلاین / گروه محصولات ";
+    ViewData["Title"] = Model.ProductCategoryWithProduct.Name;
+    ViewData["Keywords"] = Model.ProductCategoryWithProduct.KeyWords;
+    ViewData["metaDescription"] = Model.ProductCategoryWithProduct.MetaDescription;
 }
 
 <div class="breadcrumb-area section-space--half">
@@ -106,11 +108,11 @@
                                                             </span>
                                                         </div>
 
-                                                        <h3 class="single-grid-product__title">
+                                                        <h2 class="single-grid-product__title">
                                                             <a asp-page="Product" asp-route-id="@Product.Slug">
                                                                 @Product.Name
                                                             </a>
-                                                        </h3>
+                                                        </h2>
 
                                                         <p class="single-grid-product__price">
 

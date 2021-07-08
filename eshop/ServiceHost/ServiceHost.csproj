@@ -789,10 +789,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AccountManagement.Configuration\AccountManagement.Configuration.csproj" />
     <ProjectReference Include="..\BlogManagementBootstrapper\BlogManagementBootstrapper.csproj" />
     <ProjectReference Include="..\DiscountManagement.Configuration\DiscountManagement.Configuration.csproj" />
     <ProjectReference Include="..\InventoryManagement.Configuration\InventoryManagement.Configuration.csproj" />
     <ProjectReference Include="..\ShopManagement.Configuration\ShopManagement.Configuration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ProductPicture\ProfileImage\" />
   </ItemGroup>
 
 </Project>

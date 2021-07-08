@@ -2,7 +2,9 @@
 @model ServiceHost.Pages.ArticleModel
 @{
 
-    ViewData["Title"] = "فروشگاه آنلاین / مقاله ";
+    ViewData["Title"] = Model.Article.Title;
+    ViewData["Keywords"] = Model.Article.KeyWords;
+    ViewData["metaDescription"] = Model.Article.MetaDescription;
 
 }
 
@@ -13,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper breadcrumb-bg">
                     <div class="breadcrumb-content">
-                        <h2 class="breadcrumb-content__title">@Model.Article.Title</h2>
+                        <h1 class="breadcrumb-content__title">@Model.Article.Title</h1>
                         <ul class="breadcrumb-content__page-map">
                             <li>
                                 <a href="/">صفحه اصلی</a>

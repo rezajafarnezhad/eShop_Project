@@ -2,8 +2,9 @@
 @model ServiceHost.Pages.ProductModel
 @{
 
-    ViewData["Title"] = "جزییات محصول";
-
+    ViewData["Title"] = Model.Product.Name;
+    ViewData["Keywords"] = Model.Product.KeyWords;
+    ViewData["metaDescription"] = Model.Product.MetaDescription;
 }
 
 
@@ -15,7 +16,7 @@
                 <div class="breadcrumb-wrapper breadcrumb-bg">
                     <!--=======  breadcrumb content  =======-->
                     <div class="breadcrumb-content">
-                        <h4 class="breadcrumb-content__title">(@Model.Product.Name)</h4>
+                        <h1 class="breadcrumb-content__title">(@Model.Product.Name)</h1>
                         <ul class="breadcrumb-content__page-map">
                             <li>
                                 <a href="/">صفحه اصلی</a>

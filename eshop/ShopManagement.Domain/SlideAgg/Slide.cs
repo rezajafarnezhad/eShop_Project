@@ -63,4 +63,7 @@ namespace ShopManagement.Domain.SlideAgg
 
         }
     }
+
+
+  
 }

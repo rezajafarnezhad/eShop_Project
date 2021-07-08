@@ -10,5 +10,8 @@ namespace _0_Framework.Application
     {
         public const string duplicated = "مقدار وارد شده با این نام قبلا در سیستم ثبت شده";
         public const string recordNotFound = "رکوردی با این مشخصات یافت نشد";
+        public static string PasswordsNotMatch = "تکرار کلمه عبور نادرست میباشد";
+
+        public static string WrongUserinformation = "اطلاعات وارد شده اشتباه است";
     }
 }
