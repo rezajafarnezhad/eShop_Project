@@ -13,5 +13,6 @@ namespace _0_Framework.Application
         public static string PasswordsNotMatch = "تکرار کلمه عبور نادرست میباشد";
 
         public static string WrongUserinformation = "اطلاعات وارد شده اشتباه است";
+        public static string RegisterErrorMessage = "کاربر عزیز جهت ثبت نام در فروشگاه باید تمامی اطلاعات وارد شود";
     }
 }

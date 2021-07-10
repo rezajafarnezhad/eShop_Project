@@ -9,7 +9,7 @@ namespace AccountManagement.Application.Contracts.Account
 {
     public interface IAccountApplication
     {
-        OperationResult Create(CreateAccount command);
+        OperationResult Register(RegisterAccount command);
         OperationResult Edit(EditAccount command);
         EditAccount GetForEdit(long id);
         List<AccountViewModel> Search(AccountSearchModel searchModel);

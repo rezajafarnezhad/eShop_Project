@@ -1,4 +1,4 @@
-﻿@model AccountManagement.Application.Contracts.Account.CreateAccount
+﻿@model AccountManagement.Application.Contracts.Account.RegisterAccount
 
 @{
     Layout = null;
@@ -44,20 +44,23 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="ProfilePicture" class="control-label">عکس</label>
                     <input type="file" class="form-control" asp-for="ProfilePicture" accept="image/*">
                     <span asp-validation-for="ProfilePicture" class="error"></span>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Mobile" class="control-label">موبایل</label>
                     <input type="number" class="form-control" asp-for="Mobile">
                     <span asp-validation-for="Mobile" class="error"></span>
                 </div>
             </div>
+          
+        </div>
+        <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label asp-for="Password" class="control-label">رمز عبور</label>
@@ -65,8 +68,15 @@
                     <span asp-validation-for="Password" class="error"></span>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="RePassword" class="control-label">تکرار رمز</label>
+                    <input type="password" class="form-control" asp-for="RePassword">
+                    <span asp-validation-for="RePassword" class="error"></span>
+                </div>
+            </div>
         </div>
-        
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>

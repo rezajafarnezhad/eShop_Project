@@ -22,13 +22,25 @@ namespace AccountManagement.Application
             _authHelper = authHelper;
         }
 
-        public OperationResult Create(CreateAccount command)
+        public OperationResult Register(RegisterAccount command)
         {
             var operationResult = new OperationResult();
+            if (string.IsNullOrWhiteSpace(command.Mobile)
+                ||string.IsNullOrWhiteSpace(command.FullName)
+                || string.IsNullOrWhiteSpace(command.Username)
+                || string.IsNullOrWhiteSpace(command.Password) 
+                || string.IsNullOrWhiteSpace(command.RePassword))
+            {
+                return operationResult.Failed(ApplicationMessage.RegisterErrorMessage);
+            }
 
             if (_accountRepo.Exists(c => c.Username == command.Username || c.Mobile == command.Mobile))
             {
                 return operationResult.Failed(ApplicationMessage.duplicated);
+            }
+            if (command.Password != command.RePassword)
+            {
+                return operationResult.Failed(ApplicationMessage.PasswordsNotMatch);
             }
 
             var path = $"ProfileImage";
@@ -41,7 +53,7 @@ namespace AccountManagement.Application
 
             _accountRepo.Create(Account);
             _accountRepo.Save();
-            return operationResult.Succeeded();
+            return operationResult.Succeeded("ثبت نام شما در فروشگاه انجام شد میتواند در فروشگاه لاگین کنید");
 
 
 

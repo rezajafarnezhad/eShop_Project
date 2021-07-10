@@ -27,7 +27,7 @@ namespace ServiceHost.Pages
 
 
         [TempData]
-        public string Error { get; set; }
+        public string LoginMessage { get; set; }
 
         public IActionResult OnPostLogin(Login Command)
         {
@@ -38,9 +38,29 @@ namespace ServiceHost.Pages
 
             }
 
-            Error = result.Message;
+            LoginMessage = result.Message;
             return Redirect("/Account");
         }
+
+
+        [TempData]
+        public string RegisterMessage { get; set; }
+
+        [TempData]
+        public string SuccessRegister { get; set; }
+        public IActionResult OnPostRegister(RegisterAccount command)
+        {
+            var result = _accountApplication.Register(command);
+            if (result.isSucceeded)
+            {
+                SuccessRegister = result.Message;
+                return RedirectToPage("/Account");
+
+            }
+            RegisterMessage = result.Message;
+            return Redirect("/Account");
+        }
+
 
 
         public IActionResult OnGetLogOut()

@@ -31,9 +31,9 @@
                     <div class="page-content-wrapper">
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
-                                @if (Model.Error != null)
+                                @if (Model.LoginMessage != null)
                                 {
-                                    <div class="alert alert-warning">@Model.Error</div>
+                                    <div class="alert alert-warning">@Model.LoginMessage</div>
                                 }
                                 <form method="post" asp-page-handler="Login">
                                     <div class="login-form">
@@ -62,26 +62,33 @@
                                 </form>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-
+                                @if (Model.RegisterMessage != null)
+                                {
+                                    <div class="alert alert-warning">@Model.RegisterMessage</div>
+                                }
+                                @if (Model.SuccessRegister != null)
+                                {
+                                    <div class="alert alert-success">@Model.SuccessRegister</div>
+                                }
                                 <form method="post" asp-page-handler="Register">
                                     <div class="login-form">
                                         <h4 class="login-title">ثبت نام</h4>
                                         <div class="row">
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>نام کامل</label>
-                                                <input type="text" name="fullname" placeholder="نام کامل">
+                                                <input type="text" name="FullName" placeholder="نام کامل">
                                             </div>
                                             <div class="col-md-6 col-12 mb-20">
                                                 <label>نام کاربری</label>
-                                                <input type="text" name="username" placeholder="نام کاربری">
+                                                <input type="text" name="Username" placeholder="نام کاربری">
                                             </div>
                                             <div class="col-md-12 mb-20">
                                                 <label>موبایل</label>
-                                                <input type="number" class="Mobile" name="mobile" placeholder="موبایل">
+                                                <input type="number" class="Mobile" name="Mobile" placeholder="موبایل">
                                             </div>
                                             <div class="col-md-6 mb-20">
                                                 <label>کلمه رمز</label>
-                                                <input type="password" name="password" placeholder="کلمه رمز">
+                                                <input type="password" name="Password" placeholder="کلمه رمز">
                                             </div>
                                             <div class="col-md-6 mb-20">
                                                 <label>تایید کلمه رمز</label>

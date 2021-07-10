@@ -22,7 +22,15 @@ namespace AccountManagement.Domain
             Username = username;
             Mobile = mobile;
             Password = password;
-            RoleId = roleId;
+            if (roleId == 0)
+            {
+                RoleId = 3;
+            }
+            else
+            {
+                RoleId = roleId;
+            }
+
             ProfilePicture = profilePicture;
         }
 
