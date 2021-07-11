@@ -541,3 +541,4 @@ C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MAccount\Role\Edit.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MAccount\Role\Index.cshtml.g.cs
 C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Account.cshtml.g.cs
+C:\Users\mReza\source\repos\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\AccessDenied.cshtml.g.cs

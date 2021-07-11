@@ -1,4 +1,11 @@
 ﻿
+
+@inject _0_Framework.Application.IAuthHelper AuthHelper;
+@using _0_Framework.Infrastructure;
+@{
+
+
+}
 <div class="left side-menu">
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
@@ -7,7 +14,7 @@
             </div>
             <div class="user-info">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">جام جو <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">@User.Identity.Name <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
                         <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
@@ -15,8 +22,19 @@
                         <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
                     </ul>
                 </div>
+                @if (AuthHelper.CurrentAccountRole() == Roles.Admin)
+                {
+                    <p class="text-muted m-0">
+                        مدیر سیستم
+                    </p>
+                }
+                else
+                {
+                    <p class="text-muted m-0">
+                        محتوا گذار
+                    </p>
+                }
 
-                <p class="text-muted m-0">مدیر فروشگاه</p>
             </div>
         </div>
         <!--- Divider -->
@@ -25,40 +43,43 @@
                 <li>
                     <a href="/Admin/" class="waves-effect active"><i class="md md-home"></i><span> پنل مدیریت فروشگاه </span></a>
                 </li>
-                
-                
-                <li>
-                    <a href="/Admin/Inventory/index" class="waves-effect"><i class="md md-store"></i><span> مدیرت انبار </span></a>
-                </li>
 
-                <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-account-circle"></i><span>مدیریت کاربران</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a asp-page="/MAccount/Account/index">کاربران</a></li>
-                        <li><a asp-page="/MAccount/Role/index">نقش ها</a></li>
+                @if (AuthHelper.CurrentAccountRole() == Roles.Admin)
+                {
+                    <li>
+                        <a href="/Admin/Inventory/index" class="waves-effect"><i class="md md-store"></i><span> مدیرت انبار </span></a>
+                    </li>
 
-                    </ul>
-                </li>
+                    <li class="has_sub">
+                        <a class="waves-effect"><i class="md md-account-circle"></i><span>مدیریت کاربران</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a asp-page="/MAccount/Account/index">کاربران</a></li>
+                            <li><a asp-page="/MAccount/Role/index">نقش ها</a></li>
 
-                <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-shopping-basket"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="/Admin/Mshop/Slides/">اسلایدر</a></li>
-                        <li><a href="/Admin/Mshop/Product/">محصولات</a></li>
-                        <li><a href="/Admin/Mshop/Productcategory/">گروه محصولات</a></li>
-                        <li><a href="/Admin/Mshop/ProductPicture/">عکس محصولات</a></li>
-                        <li><a href="/Admin/Mshop/Comment/">مدیریت کامنت ها</a></li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-                <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-wallet-giftcard"></i><span> سیستم تخفیفات </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="/Admin/MDiscounts/CustomerDiscount/">مدیریت تخفیفات مشتریان</a></li>
-                        <li><a href="/Admin/MDiscounts/ColleagueDiscount/">مدیریت تخفیفات همکاران</a></li>
+                    <li class="has_sub">
+                        <a class="waves-effect"><i class="md md-shopping-basket"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="/Admin/Mshop/Slides/">اسلایدر</a></li>
+                            <li><a href="/Admin/Mshop/Product/">محصولات</a></li>
+                            <li><a href="/Admin/Mshop/Productcategory/">گروه محصولات</a></li>
+                            <li><a href="/Admin/Mshop/ProductPicture/">عکس محصولات</a></li>
+                        </ul>
+                    </li>
 
-                    </ul>
-                </li>
+
+
+                    <li class="has_sub">
+                        <a class="waves-effect"><i class="md md-wallet-giftcard"></i><span> سیستم تخفیفات </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="/Admin/MDiscounts/CustomerDiscount/">مدیریت تخفیفات مشتریان</a></li>
+                            <li><a href="/Admin/MDiscounts/ColleagueDiscount/">مدیریت تخفیفات همکاران</a></li>
+
+                        </ul>
+                    </li>
+                }
                 <li class="has_sub">
                     <a class="waves-effect"><i class="md md-archive"></i><span>مدیریت بلاگ</span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
@@ -67,6 +88,20 @@
 
                     </ul>
                 </li>
+
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-comment"></i><span>کامنت ها</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+
+                        <li><a href="/Admin/Mshop/Comment/">مدیریت کامنت ها</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a asp-page="/Account" asp-page-handler="LogOut" class="waves-effect"><i class="fa fa-sign-out"></i><span> خروج </span></a>
+                </li>
+
+
             </ul>
             <div class="clearfix"></div>
         </div>

@@ -19,6 +19,7 @@ using System.Text.Unicode;
 using AccountManagement.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using _0_Framework.Infrastructure;
 
 namespace ServiceHost
 {
@@ -37,11 +38,7 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.Lax;
-            //});
+
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
@@ -50,6 +47,20 @@ namespace ServiceHost
                     o.LogoutPath = new PathString("/Account");
                     o.AccessDeniedPath = new PathString("/AccessDenied");
                 });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Admin, Roles.ContentUploder }));
+
+                options.AddPolicy("ShopManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
+
+                options.AddPolicy("InventoryManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
+
+                options.AddPolicy("DiscountManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
+
+                options.AddPolicy("AccountManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
+
+            });
 
 
             services.AddHttpContextAccessor();
@@ -68,13 +79,21 @@ namespace ServiceHost
             services.AddTransient<IAuthHelper, AuthHelper>();
             #endregion
 
-          
+
 
             services.AddSingleton(
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 
 
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
+                    options.Conventions.AuthorizeAreaFolder("Admin", "/MShop", "ShopManagement");
+                    options.Conventions.AuthorizeAreaFolder("Admin", "/Inventory", "InventoryManagement");
+                    options.Conventions.AuthorizeAreaFolder("Admin", "/MDiscounts", "DiscountManagement");
+                    options.Conventions.AuthorizeAreaFolder("Admin", "/MAccount", "AccountManagement");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,5 +14,10 @@
             FullName = fullName;
             UserName = userName;
         }
+
+        public AuthViewModel()
+        {
+
+        }
     }
 }

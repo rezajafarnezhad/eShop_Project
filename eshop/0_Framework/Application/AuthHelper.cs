@@ -19,6 +19,32 @@ namespace _0_Framework.Application
             _contextAccessor = contextAccessor;
         }
 
+        public AuthViewModel CurrentAccountInfo()
+        {
+            var Result = new AuthViewModel();
+            if (!IsAuthenticated())
+            {
+                return Result;
+            }
+
+            var Claims = _contextAccessor.HttpContext.User.Claims.ToList();
+            Result.AccountId =long.Parse(Claims.FirstOrDefault(c => c.Type == "AccountId").Value);
+            Result.RoleId =long.Parse(Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role).Value);
+            Result.UserName =Claims.FirstOrDefault(c => c.Type == "UserName").Value;
+            Result.FullName =Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
+
+            return Result;
+        }
+
+        public string CurrentAccountRole()
+        {
+            if (IsAuthenticated())
+            {
+                return _contextAccessor.HttpContext.User.Claims.FirstOrDefault(c=>c.Type == ClaimTypes.Role).Value;
+            }
+            return null;
+        }
+
         public bool IsAuthenticated()
         {
             var Claims = _contextAccessor.HttpContext.User.Claims.ToList();

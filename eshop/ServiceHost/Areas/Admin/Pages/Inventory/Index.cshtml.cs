@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using _0_Framework.Infrastructure;
 using DiscountManagement.Application.Contracts.ColleagueDiscount;
 using InventoryManagement.Application.Contracts.Inventory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,9 +10,9 @@ using ShopManagement.Application.Contract.Product;
 
 namespace ServiceHost.Areas.Admin.Pages.Inventory
 {
+  
     public class IndexModel : PageModel
     {
-
         public List<InventoryViewModel> Inventories { get; set; }
         public InventorySearchModel SearchModel;
         public SelectList Products;
