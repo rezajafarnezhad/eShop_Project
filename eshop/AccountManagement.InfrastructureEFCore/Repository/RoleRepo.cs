@@ -33,14 +33,18 @@ namespace AccountManagement.InfrastructureEFCore.Repository
 
         public EditRole GetForEdit(long id)
         {
-            var role = _context.Roles.Find(id);
-            return new EditRole()
+            
+            return _context.Roles.Select(c=> new EditRole()
             {
-                Id = role.Id,
-                Name = role.Name
-            };
+                Id = c.Id,
+                Name = c.Name,
+                MappedPermission = MapPermissions(c.Permissions)
+            }).AsNoTracking().FirstOrDefault(c=>c.Id == id);
         }
 
-
+        private static List<PermissionDTO> MapPermissions(List<Permission> permissions)
+        {
+            return permissions.Select(c => new PermissionDTO(c.Code, c.Name)).ToList();
+        }
     }
 }

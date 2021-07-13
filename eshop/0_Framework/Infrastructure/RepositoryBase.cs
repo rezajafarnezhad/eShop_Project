@@ -29,7 +29,7 @@ namespace _0_Framework.Infrastructure
 
         public T Get(Tkey id)
         {
-            return _context.Set<T>().Find(id);
+            return _context.Find<T>(id);
         }
 
         public List<T> Get()

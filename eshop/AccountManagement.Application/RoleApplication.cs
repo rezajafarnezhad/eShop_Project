@@ -23,12 +23,12 @@ namespace AccountManagement.Application
         {
             var operationresult = new OperationResult();
 
-            if (_roleRepo.Exists(c=>c.Name == command.Name))
+            if (_roleRepo.Exists(c => c.Name == command.Name))
             {
                 return operationresult.Failed(ApplicationMessage.duplicated);
             }
 
-            var role = new Role(command.Name);
+            var role = new Role(command.Name, new List<Permission>());
             _roleRepo.Create(role);
             _roleRepo.Save();
             return operationresult.Succeeded();
@@ -45,13 +45,19 @@ namespace AccountManagement.Application
                 return operationresult.Failed(ApplicationMessage.recordNotFound);
             }
 
-            if (_roleRepo.Exists(c=>c.Name == command.Name && c.Id !=command.Id))
+            if (_roleRepo.Exists(c => c.Name == command.Name && c.Id != command.Id))
             {
                 return operationresult.Failed(ApplicationMessage.duplicated);
             }
 
-            role.Edit(command.Name);
-            _roleRepo.Save();
+            var permissions = new List<Permission>();
+
+            command.permissions.ForEach(code => permissions.Add(new Permission(code)));
+
+            role.Edit(command.Name, permissions);
+
+           _roleRepo.Save();
+
             return operationresult.Succeeded();
 
         }

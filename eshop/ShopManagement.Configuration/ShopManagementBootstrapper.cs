@@ -1,4 +1,5 @@
-﻿using _01_eshopQuery.Contracts.Product;
+﻿using _0_Framework.Infrastructure;
+using _01_eshopQuery.Contracts.Product;
 using _01_eshopQuery.Contracts.ProductCategory;
 using _01_eshopQuery.Contracts.Slide;
 using _01_eshopQuery.Query;
@@ -10,6 +11,7 @@ using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Application.Contract.ProductPicture;
 using ShopManagement.Application.Contract.Slide;
+using ShopManagement.Configuration.Permissions;
 using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
@@ -52,6 +54,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<ICommentApplication, CommentApplication>();
             services.AddTransient<ICommentRepo, CommentRepo>();
 
+            services.AddTransient<IPermissionExposer,ShopPermissionExposer>();
 
 
             services.AddDbContext<DBContext>(c => c.UseSqlServer(ConnectionString));

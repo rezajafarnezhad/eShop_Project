@@ -1,36 +1,97 @@
-﻿@model AccountManagement.Application.Contracts.Role.EditRole
-@{
-}
+﻿@page "{id}"
+@model ServiceHost.Areas.Admin.Pages.MAccount.Role.EditModel
 
 @{
-    Layout = null;
+    Layout = "Shared/_AdminLayout";
+    ViewData["title"] = "ویرایش نقش ";
 }
 
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h4 class="modal-title">ویرایش نقش @Model.Name</h4>
+    <h4 class="modal-title">ویرایش نقش @Model.command.Name</h4>
 </div>
 
 
-<form asp-page="./Index" asp-page-handler="Edit"
-      method="post"
-      data-ajax="true"
-      data-callback=""
-      data-action="Refresh">
-    <div class="modal-body">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label">نقش</label>
-                    <input type="text" class="form-control" asp-for="Name">
-                    <span asp-validation-for="Name" class="error"></span>
-                </div>
+<form method="post" asp-page="Edit">
+    <div class="row">
+        <input type="hidden" asp-for="command.Id" value="@Model.command.Id" />
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="command.Name" class="control-label">نام نقش</label>
+                <input type="text" class="form-control" asp-for="command.Name">
+                <span asp-validation-for="command.Name" class="error"></span>
             </div>
-            <input type="hidden" asp-for="Id" value="@Model.Id"/>
         </div>
+
+        <div class="col-md-6">
+            <label class="control-label col-md-3">انتخاب دسترسی ها</label>
+            <div class="col-md-12">
+                <select asp-for="command.permissions" asp-items="Model.Permissions" class="multi-select" multiple="multiple" id="my_multi_select3">
+
+                </select>
+            </div>
+        </div>
+
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
         <button type="submit" class="btn btn-warning waves-effect waves-light">ویرایش</button>
     </div>
 </form>
+
+
+@section Css{ 
+
+    <link href="~/AdminPanel/assets/jquery-multi-select/multi-select.css" rel="stylesheet" type="text/css" />
+}
+
+@section SC{
+
+    <script src="~/AdminPanel/js/jquery-1.10.2.js"></script>
+    <script src="~/AdminPanel/assets/jquery-multi-select/jquery.multi-select.js"></script>
+    <script src="~/AdminPanel/assets/jquery-multi-select/jquery.quicksearch.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $('#my_multi_select3').multiSelect({
+                selectableOptgroup: true,
+                selectableHeader:
+                    "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جستجو...'>",
+                selectionHeader:
+                    "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جستجو...'>",
+                afterInit: function (ms) {
+                    var that = this,
+                        $selectableSearch = that.$selectableUl.prev(),
+                        $selectionSearch = that.$selectionUl.prev(),
+                        selectableSearchString =
+                            '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                        selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                        .on('keydown',
+                            function (e) {
+                                if (e.which === 40) {
+                                    that.$selectableUl.focus();
+                                    return false;
+                                }
+                            });
+
+                    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                        .on('keydown',
+                            function (e) {
+                                if (e.which == 40) {
+                                    that.$selectionUl.focus();
+                                    return false;
+                                }
+                            });
+                },
+                afterSelect: function () {
+                    this.qs1.cache();
+                    this.qs2.cache();
+                },
+                afterDeselect: function () {
+                    this.qs1.cache();
+                    this.qs2.cache();
+                }
+            });
+        });
+    </script>
+}
