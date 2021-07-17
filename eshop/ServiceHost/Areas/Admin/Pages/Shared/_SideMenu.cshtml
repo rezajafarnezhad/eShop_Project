@@ -2,15 +2,19 @@
 
 @inject _0_Framework.Application.IAuthHelper AuthHelper;
 @using _0_Framework.Infrastructure;
-@{
+
+@using AccountManagement.Configuration.Permissions
+@using BlogManagementBootstrapper.Permissions
+@using DiscountManagement.Configuration.Permissions
+@using InventoryManagement.Configuration.Permissions
+@using ShopManagement.Configuration.Permissions
 
 
-}
-<div class="left side-menu">
+<div class="left side-menu" Permission="@AccountPermissions.PanelAdmin" >
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-right">
-                <img src="/ProductPicture/" alt="" class="thumb-md img-circle">
+                <img src="/AdminPanel/assets/" alt="" class="thumb-md img-circle">
             </div>
             <div class="user-info">
                 <div class="dropdown">
@@ -31,7 +35,7 @@
                 else
                 {
                     <p class="text-muted m-0">
-                        محتوا گذار
+                        اپراتور سیستم
                     </p>
                 }
 
@@ -43,48 +47,50 @@
                 <li>
                     <a href="/Admin/" class="waves-effect active"><i class="md md-home"></i><span> پنل مدیریت فروشگاه </span></a>
                 </li>
-
-                @if (AuthHelper.CurrentAccountRole() == Roles.Admin)
-                {
-                    <li>
-                        <a href="/Admin/Inventory/index" class="waves-effect"><i class="md md-store"></i><span> مدیرت انبار </span></a>
-                    </li>
-
-                    <li class="has_sub">
-                        <a class="waves-effect"><i class="md md-account-circle"></i><span>مدیریت کاربران</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a asp-page="/MAccount/Account/index">کاربران</a></li>
-                            <li><a asp-page="/MAccount/Role/index">نقش ها</a></li>
-
-                        </ul>
-                    </li>
-
-                    <li class="has_sub">
-                        <a class="waves-effect"><i class="md md-shopping-basket"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="/Admin/Mshop/Slides/">اسلایدر</a></li>
-                            <li><a href="/Admin/Mshop/Product/">محصولات</a></li>
-                            <li><a href="/Admin/Mshop/Productcategory/">گروه محصولات</a></li>
-                            <li><a href="/Admin/Mshop/ProductPicture/">عکس محصولات</a></li>
-                        </ul>
-                    </li>
+                <li Permission="@InventoryPermissions.ListInventory" class="has_sub">
+                    <a class="waves-effect"><i class="md md-store"></i><span>مدیرت انبار</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a asp-page="/Inventory/Index">انبار</a></li>
+                        
+                    </ul>
+                </li>
 
 
+                <li class="has_sub">
+                    <a  class="waves-effect"><i class="md md-account-circle"></i><span>مدیریت کاربران</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a Permission="@AccountPermissions.ListUser" asp-page="/MAccount/Account/index">کاربران</a></li>
+                        <li><a Permission="@AccountPermissions.ListRoles" asp-page="/MAccount/Role/index">نقش ها</a></li>
 
-                    <li class="has_sub">
-                        <a class="waves-effect"><i class="md md-wallet-giftcard"></i><span> سیستم تخفیفات </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="/Admin/MDiscounts/CustomerDiscount/">مدیریت تخفیفات مشتریان</a></li>
-                            <li><a href="/Admin/MDiscounts/ColleagueDiscount/">مدیریت تخفیفات همکاران</a></li>
+                    </ul>
+                </li>
 
-                        </ul>
-                    </li>
-                }
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-shopping-basket"></i><span> فروشگاه </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a Permission="@ShopPermissions.ListSlides" href="/Admin/Mshop/Slides/">اسلایدر</a></li>
+                        <li><a Permission="@ShopPermissions.ListProducts" href="/Admin/Mshop/Product/">محصولات</a></li>
+                        <li><a Permission="@ShopPermissions.ListProductCategories" href="/Admin/Mshop/Productcategory/">گروه محصولات</a></li>
+                        <li><a Permission="@ShopPermissions.ListGalleries" href="/Admin/Mshop/ProductPicture/">عکس محصولات</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-wallet-giftcard"></i><span> سیستم تخفیفات </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a Permission="@DiscountPermissions.ListCDiscount" href="/Admin/MDiscounts/CustomerDiscount/">مدیریت تخفیفات مشتریان</a></li>
+                        <li><a Permission="@DiscountPermissions.ListDiscount" href="/Admin/MDiscounts/ColleagueDiscount/">مدیریت تخفیفات همکاران</a></li>
+
+                    </ul>
+                </li>
+
                 <li class="has_sub">
                     <a class="waves-effect"><i class="md md-archive"></i><span>مدیریت بلاگ</span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a asp-page="/MBlog/ArticleCategory/index">مدیریت گروه مقالات</a></li>
-                        <li><a asp-page="/MBlog/Article/index">مدیریت مقالات</a></li>
+                        <li><a Permission="@BlogPermissions.ListArticleCategory" asp-page="/MBlog/ArticleCategory/index">مدیریت گروه مقالات</a></li>
+                        <li><a Permission="@BlogPermissions.ListArticle" asp-page="/MBlog/Article/index">مدیریت مقالات</a></li>
 
                     </ul>
                 </li>

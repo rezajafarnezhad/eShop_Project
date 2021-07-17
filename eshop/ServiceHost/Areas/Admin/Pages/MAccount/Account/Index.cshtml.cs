@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,6 +29,9 @@ namespace ServiceHost.Areas.Admin.Pages.MAccount.Account
         public List<AccountViewModel> Account { get; set; }
         public AccountSearchModel SearchModel;
         public SelectList Roles;
+
+        [NeedsPermissions(AccountPermissions.ListUser)]
+
         public void OnGet(AccountSearchModel searchModel)
         {
 
@@ -44,6 +49,8 @@ namespace ServiceHost.Areas.Admin.Pages.MAccount.Account
             return Partial("./Create", Command);
         }
 
+        [NeedsPermissions(AccountPermissions.CrateUser)]
+
         public IActionResult OnPostCreate(RegisterAccount Command)
         {
             var result = _accountApplication.Register(Command);
@@ -57,6 +64,8 @@ namespace ServiceHost.Areas.Admin.Pages.MAccount.Account
             return Partial("./Edit", Command);
         }
 
+        [NeedsPermissions(AccountPermissions.EditUser)]
+
         public IActionResult OnPostEdit(EditAccount command)
         {
             var result = _accountApplication.Edit(command);
@@ -69,6 +78,7 @@ namespace ServiceHost.Areas.Admin.Pages.MAccount.Account
             return Partial("./ChangePassword", Command);
         }
 
+        [NeedsPermissions(AccountPermissions.PassChangeUser)]
 
         public IActionResult OnPostChangePassword(ChangePassword command)
         {

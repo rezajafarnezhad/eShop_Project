@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
+using InventoryManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +12,7 @@ using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Application.Contract.ProductPicture;
 using ShopManagement.Application.Contract.Slide;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Admin.Pages.MShop.Slides
 {
@@ -26,6 +29,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Slides
             _slideApplication = slideApplication;
         }
 
+        
         public void OnGet()
         {
             slides = _slideApplication.GetList();
@@ -39,6 +43,8 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Slides
 
             return Partial("./Create", command);
         }
+
+        
 
         public JsonResult OnPostCreate(CreateSlide command)
         {
@@ -55,6 +61,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Slides
             return Partial("./Edit", slide);
         }
 
+    
 
         public JsonResult OnPostEdit(EditSlide command)
         {

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using _0_Framework.Infrastructure;
 using DiscountManagement.Application.Contracts.ColleagueDiscount;
 using InventoryManagement.Application.Contracts.Inventory;
+using InventoryManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -27,6 +28,7 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
             _inventoryApplication = inventoryApplication;
         }
 
+        [NeedsPermissions(InventoryPermissions.ListInventory)]
         public void OnGet(InventorySearchModel searchModel)
         {
 
@@ -43,6 +45,7 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
             return Partial("./Create", createInventory);
         }
 
+        [NeedsPermissions(InventoryPermissions.CrateInventory)]
         public JsonResult OnPostCreate(CreateInventory command)
         {
             var result = _inventoryApplication.Create(command);
@@ -60,6 +63,7 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
 
         }
 
+        [NeedsPermissions(InventoryPermissions.EditInventory)]
 
         public JsonResult OnPostEdit(EditInventory command)
         {
@@ -75,6 +79,8 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
             return Partial("./Increase", increase);
         }
 
+        [NeedsPermissions(InventoryPermissions.Increase)]
+
         public JsonResult OnPostIncrease(IncreaseInventory command)
         {
             var result = _inventoryApplication.Increase(command);
@@ -88,12 +94,15 @@ namespace ServiceHost.Areas.Admin.Pages.Inventory
             return Partial("./Reduse", Reduse);
         }
 
+        [NeedsPermissions(InventoryPermissions.Reduce)]
+
         public JsonResult OnPostReduse(ReduceInventory command)
         {
             var result = _inventoryApplication.Reduce(command);
             return new JsonResult(result);
         }
 
+        [NeedsPermissions(InventoryPermissions.OperationLog)]
         public IActionResult OnGetLog(long id)
         {
             var operationInventory = _inventoryApplication.GetOperationLog(id);

@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using DiscountManagement.Application.Contracts.ColleagueDiscount;
 using DiscountManagement.Application.Contracts.CustomerDiscount;
+using DiscountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -29,6 +31,7 @@ namespace ServiceHost.Areas.Admin.Pages.MDiscounts.ColleagueDiscount
             _colleagueDiscountApplication = colleagueDiscountApplication;
         }
 
+        [NeedsPermissions(DiscountPermissions.ListDiscount)]
         public void OnGet(ColleagueDiscountSearchModel searchModel)
         {
 
@@ -45,6 +48,7 @@ namespace ServiceHost.Areas.Admin.Pages.MDiscounts.ColleagueDiscount
             return Partial("./Create", defineColleagueDiscount);
         }
 
+        [NeedsPermissions(DiscountPermissions.DefineDiscount)]
         public JsonResult OnPostCreate(DefineColleagueDiscount command)
         {
             var result = _colleagueDiscountApplication.Define(command);
@@ -62,6 +66,7 @@ namespace ServiceHost.Areas.Admin.Pages.MDiscounts.ColleagueDiscount
         }
 
 
+        [NeedsPermissions(DiscountPermissions.EditDiscount)]
         public JsonResult OnPostEdit(EditColleagueDiscount command)
         {
             var result = _colleagueDiscountApplication.Edit(command);
@@ -76,6 +81,8 @@ namespace ServiceHost.Areas.Admin.Pages.MDiscounts.ColleagueDiscount
             return RedirectToPage("./Index");
         }
 
+
+ 
         public IActionResult OnPostRestore(long id)
         {
             var result = _colleagueDiscountApplication.Restore(id);

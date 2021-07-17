@@ -15,7 +15,7 @@
     <div class="row">
         <input type="hidden" asp-for="command.Id" value="@Model.command.Id" />
 
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="form-group">
                 <label asp-for="command.Name" class="control-label">نام نقش</label>
                 <input type="text" class="form-control" asp-for="command.Name">
@@ -23,23 +23,23 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <label class="control-label col-md-3">انتخاب دسترسی ها</label>
+        <div class="col-md-7">
+            <label class="control-label col-md-4">انتخاب دسترسی ها</label>
             <div class="col-md-12">
                 <select asp-for="command.permissions" asp-items="Model.Permissions" class="multi-select" multiple="multiple" id="my_multi_select3">
-
                 </select>
             </div>
         </div>
 
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-warning waves-effect waves-light">ویرایش</button>
+        <button type="submit" class="btn btn-success btn-rounded waves-effect waves-light m-b-5">ثبت اطلاعات</button>
     </div>
 </form>
 
 
-@section Css{ 
+
+@section Css{
 
     <link href="~/AdminPanel/assets/jquery-multi-select/multi-select.css" rel="stylesheet" type="text/css" />
 }
@@ -55,8 +55,9 @@
                 selectableOptgroup: true,
                 selectableHeader:
                     "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جستجو...'>",
-                selectionHeader:
-                    "<input type='text' class='form-control search-input' autocomplete='off' placeholder='جستجو...'>",
+                selectionHeader: 
+                    "<h4 class='text-success control-label font-weight-bold'>ستون انتخاب شده ها</h4> <input type='text' class= 'form-control search-input' autocomplete='off' placeholder='جستجو...'> ",
+              
                 afterInit: function (ms) {
                     var that = this,
                         $selectableSearch = that.$selectableUl.prev(),

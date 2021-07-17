@@ -1,4 +1,5 @@
-﻿using _01_eshopQuery.Contracts.Article;
+﻿using _0_Framework.Infrastructure;
+using _01_eshopQuery.Contracts.Article;
 using _01_eshopQuery.Contracts.ArticleCategory;
 using _01_eshopQuery.Query;
 using BlogManagement.Application;
@@ -8,6 +9,7 @@ using BlogManagement.Domain.ArticleAgg;
 using BlogManagement.Domain.ArticleCategoryAgg;
 using BlogManagement.Infrastructure.EFCore;
 using BlogManagement.Infrastructure.EFCore.Repository;
+using InventoryManagement.Configuration.Permissions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -30,6 +32,9 @@ namespace BlogManagementBootstrapper
             services.AddTransient<IArticleApplication, ArticleApplication>();
             services.AddTransient<IArticleRepo, ArticleRepo>();
             services.AddTransient<IArticleQuery, ArticleQuery>();
+
+            services.AddTransient<IPermissionExposer, BlogPermissionExposer>();
+
 
 
             services.AddDbContext<BlogContext>(c => c.UseSqlServer(ConnectionString));

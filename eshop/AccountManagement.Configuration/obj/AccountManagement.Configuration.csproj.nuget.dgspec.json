@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj": {}
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
         "projectName": "0_Framework",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -62,6 +62,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -83,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj",
         "projectName": "AccountManagement.Application.Contracts",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -114,8 +118,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
               }
             }
           }
@@ -154,14 +158,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj",
         "projectName": "AccountManagement.Application",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -185,11 +189,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj"
               },
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj"
               }
             }
           }
@@ -222,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj",
         "projectName": "AccountManagement.Configuration",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\AccountManagement.Configuration.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Configuration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -253,11 +257,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application\\AccountManagement.Application.csproj"
               },
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj"
               }
             }
           }
@@ -316,14 +320,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj",
         "projectName": "AccountManagement.InfrastructureEFCore",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\AccountManagement.InfrastructureEFCore.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.InfrastructureEFCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -347,8 +351,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj"
               }
             }
           }
@@ -403,14 +407,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj",
         "projectName": "AccountManagement.Domain",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\AccountManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagmant.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -434,11 +438,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
               },
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\AccountManagement.Application.Contracts\\AccountManagement.Application.Contracts.csproj"
               }
             }
           }

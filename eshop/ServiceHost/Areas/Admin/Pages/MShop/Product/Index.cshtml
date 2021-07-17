@@ -1,7 +1,7 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.MShop.Product.IndexModel
 
-
+@using ShopManagement.Configuration.Permissions
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -12,12 +12,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد محصول جدید</a>
+            <a Permission="@ShopPermissions.CrateProducts" class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد محصول جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" Permission="@ShopPermissions.SearchProducts">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" Permission="@ShopPermissions.ListProducts">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -85,12 +85,12 @@
 
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-sm btn-warning waves-effect waves-light m-b-5"
+                                            <a Permission="@ShopPermissions.EditProducts" class="btn btn-sm btn-warning waves-effect waves-light m-b-5"
                                                href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
 
-                                            <a class="btn btn-sm btn-info waves-effect waves-light m-b-5"
+                                            <a Permission="@ShopPermissions.ListGalleries" class="btn btn-sm btn-info waves-effect waves-light m-b-5"
                                                href="/Admin/MShop/ProductPicture?SearchModel.ProductId=@item.Id">
                                                 <i class="fa fa-eye"></i> گالری تصاویر 
                                             </a>

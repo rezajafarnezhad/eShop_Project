@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using ShopManagement.Application;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Application.Contract.ProductPicture;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Admin.Pages.MShop.ProductPicture
 {
@@ -29,6 +31,9 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductPicture
             _productPictureApplication = productPictureApplication;
         }
 
+
+        [NeedsPermissions(ShopPermissions.ListGalleries)]
+
         public void OnGet(ProductPictureSearchModel searchModel)
         {
             Products = new SelectList(_productApplication.GetProducts(), "Id", "Name");
@@ -44,6 +49,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductPicture
             return Partial("./Create", command);
         }
 
+        [NeedsPermissions(ShopPermissions.CrateGallery)]
         public JsonResult OnPostCreate(CreateProductPicture command)
         {
             var result = _productPictureApplication.Create(command);
@@ -60,6 +66,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductPicture
             return Partial("./Edit", EditProductPic);
         }
 
+        [NeedsPermissions(ShopPermissions.EditGallery)]
 
         public JsonResult OnPostEdit(EditproductPicture command)
         {
@@ -82,6 +89,7 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.ProductPicture
             return RedirectToPage("./Index");
 
         }
+
 
         public IActionResult OnPostRestore(int id)
         {

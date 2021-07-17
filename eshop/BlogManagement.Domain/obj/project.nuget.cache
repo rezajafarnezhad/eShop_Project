@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gZ6pNN1zxt7uES4ic4Bmr+GQZ2tRhNCbHa3Ix/A69TNoRKRO0W+osY8JV/ziR6c2h3Ky8Ad6/xuHrPJFuBLnOQ==",
+  "dgSpecHash": "I92XmiV7+j8pIGFByQC4zQmf4FzzTd8XHHpc6BK4NdoSeuT2ag+/5vTNPLtnR0NQLkbTbAKZw0ZMHVJmNR79IA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
+  "projectFilePath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\BlogManagement.Domain\\BlogManagement.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -39,6 +39,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\mReza\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\mReza\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\mReza\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\mReza\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

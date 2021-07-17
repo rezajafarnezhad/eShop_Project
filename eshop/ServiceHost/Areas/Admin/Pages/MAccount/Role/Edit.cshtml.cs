@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using _0_Framework.Infrastructure;
 using AccountManagement.Application.Contracts.Role;
+using AccountManagement.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,7 +25,8 @@ namespace ServiceHost.Areas.Admin.Pages.MAccount.Role
             _exposers = exposers;
         }
 
-      
+        [NeedsPermissions(AccountPermissions.EditRole)]
+
         public void OnGet(long id)
         {
 

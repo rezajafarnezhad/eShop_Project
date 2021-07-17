@@ -1,6 +1,8 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.MBlog.ArticleCategory.IndexModel
 
+@using BlogManagementBootstrapper.Permissions
+
 @{
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت گروه مقالات";
@@ -10,12 +12,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه مقاله جدید</a>
+            <a Permission="@BlogPermissions.CrateArticleCategory" class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه مقاله جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" Permission="@BlogPermissions.SearchArticleCategory">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -35,7 +37,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" Permission="@BlogPermissions.ListArticleCategory">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -67,7 +69,7 @@
                                     <td>@item.ArticleCount</td>
                                     <td>@item.CreationDate</td>
                                     <td>
-                                        <a class="btn btn-warning pull-right m-rl-5"
+                                        <a Permission="@BlogPermissions.EditArticleCategory" class="btn btn-warning pull-right m-rl-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                             <i class="fa fa-edit"></i> ویرایش
                                         </a>

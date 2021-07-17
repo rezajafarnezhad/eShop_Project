@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj": {}
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
         "projectName": "0_Framework",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -62,6 +62,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -83,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "projectName": "ShopManagement.Application.Contract",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -114,8 +118,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
               }
             }
           }
@@ -154,14 +158,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj",
         "projectName": "ShopManagement.Application",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\ShopManagement.Application.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -185,11 +189,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               },
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }
@@ -222,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+    "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "projectName": "ShopManagement.Domain",
-        "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
+        "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\mReza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\obj\\",
+        "outputPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -253,11 +257,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\0_Framework\\0_Framework.csproj"
               },
-              "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
-                "projectPath": "C:\\Users\\mReza\\source\\repos\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\mReza\\source\\repos\\Orginal\\Project_Eshop\\Code\\eshop\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               }
             }
           }

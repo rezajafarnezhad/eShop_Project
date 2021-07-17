@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
+using BlogManagementBootstrapper.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,13 +29,14 @@ namespace ServiceHost.Areas.Admin.Pages.MBlog.Article
         public ArticleSeachModel SeachModel;
         public SelectList ArticleCategory;
 
+
+        [NeedsPermissions(BlogPermissions.ListArticle)]
         public void OnGet(ArticleSeachModel seachModel)
         {
 
             Articles = _articleApplication.Search(seachModel);
             ArticleCategory = new SelectList(_articleCategoryApplication.GetArticleCategory(),"Id","Name");
         }
-
 
         public IActionResult OnGetRemove(long id)
         {

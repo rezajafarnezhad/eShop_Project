@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _0_Framework.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopManagement.Application.Contract.Product;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Application.Contract.ProductPicture;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Admin.Pages.MShop.Product
 {
@@ -31,11 +33,10 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
             _productCategoryApplication = productCategoryApplication;
         }
 
+
+        [NeedsPermissions(ShopPermissions.ListProducts)]
         public void OnGet(ProductSearchModel searchModel)
         {
-
-            
-
             ProductCategories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name");
             Products = _productApplication.Search(searchModel);
 
@@ -49,6 +50,8 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
             return Partial("./Create", command);
         }
 
+
+        [NeedsPermissions(ShopPermissions.CrateProducts)]
         public JsonResult OnPostCreate(CreateProduct command)
         {
             var result = _productApplication.Create(command);
@@ -64,8 +67,9 @@ namespace ServiceHost.Areas.Admin.Pages.MShop.Product
             EditProduct.Categories = _productCategoryApplication.GetProductCategories();
             return Partial("./Edit", EditProduct);
         }
-        
 
+
+        [NeedsPermissions(ShopPermissions.EditProducts)]
         public JsonResult OnPostEdit(EditProduct command)
         {
             var result = _productApplication.Edit(command);

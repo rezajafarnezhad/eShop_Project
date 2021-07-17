@@ -2,6 +2,7 @@
 @model ServiceHost.Areas.Admin.Pages.MShop.Slides.IndexModel
 
 
+@using ShopManagement.Configuration.Permissions
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -12,13 +13,13 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد تصویر اسلایدر </a>
+            <a Permission="@ShopPermissions.CrateSlider" class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد تصویر اسلایدر </a>
         </p>
     </div>
 </div>
 
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" Permission="@ShopPermissions.ListSlides">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -42,52 +43,52 @@
                             <tbody>
                                 @foreach (var item in Model.slides)
                                 {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    <td>
-                                        <img src="~/ProductPicture/@item.Picture" style="width: 200px; height:100px" />
-                                    </td>
-                                    <td>@item.Heading</td>
-                                    <td>@item.Title</td>
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>
+                                            <img src="~/ProductPicture/@item.Picture" style="width: 200px; height:100px" />
+                                        </td>
+                                        <td>@item.Heading</td>
+                                        <td>@item.Title</td>
 
-                                    <td>
-                                        @if (!item.IsRemoved)
-                                        {
-                                            <i class="fa fa-2x fa fa-check text-success"></i>
-                                        }
-                                        else
-                                        {
-                                            <i class="fa fa-2x fa fa-remove text-danger"></i>
+                                        <td>
+                                            @if (!item.IsRemoved)
+                                            {
+                                                <i class="fa fa-2x fa fa-check text-success"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-2x fa fa-remove text-danger"></i>
 
-                                        }
-                                    </td>
-                                    <td>@item.CreationDate</td>
-                                    <td>
-                                        <a class="btn btn-warning pull-right m-rl-5"
-                                           href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                            <i class="fa fa-edit"></i> ویرایش
-                                        </a>
+                                            }
+                                        </td>
+                                        <td>@item.CreationDate</td>
+                                        <td>
+                                            <a Permission="@ShopPermissions.EditSlider" class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                                <i class="fa fa-edit"></i> ویرایش
+                                            </a>
 
-                                        @if (item.IsRemoved)
-                                        {
+                                            @if (item.IsRemoved)
+                                            {
 
-                                            <form method="post" asp-page-handler="Restore" class="pull-left">
-                                                <input type="hidden" name="id" asp-for="@item.Id" />
-                                                <button class="btn btn-success">فعال کردن</button>
-                                            </form>
+                                                <form Permission="@ShopPermissions.RestoreSlider" method="post" asp-page-handler="Restore" class="pull-left">
+                                                    <input type="hidden" name="id" asp-for="@item.Id" />
+                                                    <button class="btn btn-success">فعال کردن</button>
+                                                </form>
 
-                                        }
-                                        else
-                                        {
-                                            <form method="post" asp-page-handler="Remove" class="pull-left">
-                                                <input type="hidden" name="id" asp-for="@item.Id" />
-                                                <button class="btn btn-danger">غیر فعال کردن</button>
-                                            </form>
-                                        }
+                                            }
+                                            else
+                                            {
+                                                <form Permission="@ShopPermissions.RemoveSlide" method="post" asp-page-handler="Remove" class="pull-left">
+                                                    <input type="hidden" name="id" asp-for="@item.Id" />
+                                                    <button class="btn btn-danger">غیر فعال کردن</button>
+                                                </form>
+                                            }
 
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>

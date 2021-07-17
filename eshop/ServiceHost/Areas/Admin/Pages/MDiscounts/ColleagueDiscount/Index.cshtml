@@ -1,7 +1,7 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.MDiscounts.ColleagueDiscount.IndexModel
 
-
+@using DiscountManagement.Configuration.Permissions
 
 @{
     Layout = "Shared/_AdminLayout";
@@ -12,12 +12,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد جدید</a>
+            <a Permission="@DiscountPermissions.DefineDiscount" class="btn btn-success" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" Permission="@DiscountPermissions.SearchDiscount">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" Permission="@DiscountPermissions.ListDiscount">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -81,14 +81,14 @@
                                             }
                                         </td>
                                         <td>
-                                            <a class="btn btn-warning pull-right m-rl-5"
+                                            <a Permission="@DiscountPermissions.EditDiscount" class="btn btn-warning pull-right m-rl-5"
                                                href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
 
                                             @if (item.IsRemoved)
                                             {
-                                                <form method="post" asp-page-handler="Restore" class="pull-left">
+                                                <form Permission="@DiscountPermissions.RestoreDiscount" method="post" asp-page-handler="Restore" class="pull-left">
                                                     <input type="hidden" name="id" asp-for="@item.Id" />
                                                     <button class="btn btn-sm  btn-success">فعال سازی</button>
                                                 </form>
@@ -96,7 +96,7 @@
                                             }
                                             else
                                             {
-                                                <form method="post" asp-page-handler="Remove" class="pull-left">
+                                                <form Permission="@DiscountPermissions.RemoveDiscount" method="post" asp-page-handler="Remove" class="pull-left">
                                                     <input type="hidden" name="id" asp-for="@item.Id" />
                                                     <button class="btn btn-sm btn-danger">غیر فعال</button>
                                                 </form>

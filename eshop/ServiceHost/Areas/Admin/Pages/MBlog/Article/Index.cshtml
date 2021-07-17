@@ -1,6 +1,8 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.MBlog.Article.IndexModel
 
+@using BlogManagementBootstrapper.Permissions
+
 @{
     Layout = "Shared/_AdminLayout";
     ViewData["title"] = "مدیریت  مقالات";
@@ -10,12 +12,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success" asp-page="Create">ایجاد مقاله جدید</a>
+            <a Permission="@BlogPermissions.CrateArticle" class="btn btn-success" asp-page="Create">ایجاد مقاله جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" Permission="@BlogPermissions.SearchArticle">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -41,7 +43,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" Permission="@BlogPermissions.ListArticle">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -87,21 +89,21 @@
                                         </td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-sm btn-warning waves-effect waves-light m-b-5 pull-right"
+                                            <a Permission="@BlogPermissions.EditArticle" class="btn btn-sm btn-warning waves-effect waves-light m-b-5 pull-right"
                                               asp-page="Edit" asp-route-id="@item.Id">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
 
                                             @if (item.IsRemoved)
                                             {
-                                                <a class="btn btn-sm btn-success waves-effect waves-light m-b-5 pull-left"
+                                                <a Permission="@BlogPermissions.Restore" class="btn btn-sm btn-success waves-effect waves-light m-b-5 pull-left"
                                                    asp-page="Index" asp-page-handler="Restore" asp-route-id="@item.Id">
                                                     <i class="fa fa-check"></i> فعال
                                                 </a>
                                             }
                                             else
                                             {
-                                                <a class="btn btn-sm btn-danger waves-effect waves-light m-b-5 pull-left"
+                                                <a Permission="@BlogPermissions.Remove" class="btn btn-sm btn-danger waves-effect waves-light m-b-5 pull-left"
                                                    asp-page="Index" asp-page-handler="Remove" asp-route-id="@item.Id">
                                                     <i class="fa fa-remove"></i> غیر فعال
                                                 </a>

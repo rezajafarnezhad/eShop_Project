@@ -16,23 +16,49 @@ namespace ShopManagement.Configuration.Permissions
             return new Dictionary<string, List<PermissionDTO>>
             {
                 {
-                    "Product",new List<PermissionDTO>
+                    "مدیریت محصولات (P)",new List<PermissionDTO>
                     {
-                        new PermissionDTO(10,"لیست محصولات"),
-                        new PermissionDTO(11,"ایجاد محصولات"),
-                        new PermissionDTO(12,"ویرایش محصولات"),
-                        new PermissionDTO(13,"جستجو محصولات"),
+                        new PermissionDTO(ShopPermissions.ListProducts,"لیست محصولات"),
+                        new PermissionDTO(ShopPermissions.CrateProducts,"ایجاد محصولات"),
+                        new PermissionDTO(ShopPermissions.EditProducts,"ویرایش محصولات"),
+                        new PermissionDTO(ShopPermissions.SearchProducts,"جستجو محصولات"),
 
                     }
                 },
 
                 {
-                    "ProductCategory",new List<PermissionDTO>
+                    " مدیریت گروه محصولات (PC)",new List<PermissionDTO>
                     {
-                        new PermissionDTO(14,"لیست گروه محصولات"),
-                        new PermissionDTO(15,"ایجاد گروه محصولات"),
-                        new PermissionDTO(16,"ویرایش گروه محصولات"),
-                        new PermissionDTO(17,"جستجو گروه محصولات"),
+                        new PermissionDTO(ShopPermissions.ListProductCategories,"لیست گروه محصولات"),
+                        new PermissionDTO(ShopPermissions.CrateProductCategories,"ایجاد گروه محصولات"),
+                        new PermissionDTO(ShopPermissions.EditProductCategories,"ویرایش گروه محصولات"),
+                        new PermissionDTO(ShopPermissions.SearchProductCategpries,"جستجو گروه محصولات"),
+
+                    }
+                },
+
+                {
+                    " مدیریت گالری (Gl)",new List<PermissionDTO>
+                    {
+                        new PermissionDTO(ShopPermissions.ListGalleries,"لیست گالری محصولات"),
+                        new PermissionDTO(ShopPermissions.CrateGallery,"ایجاد گالری محصولات"),
+                        new PermissionDTO(ShopPermissions.EditGallery,"ویرایش گالری محصولات"),
+                        new PermissionDTO(ShopPermissions.searchGalley,"جستجو گالری محصولات"),
+                        new PermissionDTO(ShopPermissions.RemoveGalley,"حذف گالری محصولات"),
+                        new PermissionDTO(ShopPermissions.RestoreGalley,"بازیابی گالری محصولات"),
+
+                    }
+                },
+
+                {
+                    " مدیریت اسلایدر (Sl)",new List<PermissionDTO>
+                    {
+                        new PermissionDTO(ShopPermissions.ListSlides,"لیست اسلایدر "),
+                        new PermissionDTO(ShopPermissions.CrateSlider,"ایجاد اسلایدر"),
+                        new PermissionDTO(ShopPermissions.EditSlider,"ویرایش اسلایدر"),
+                        new PermissionDTO(ShopPermissions.RemoveSlide,"حذف اسلایدر"),
+                        new PermissionDTO(ShopPermissions.RestoreSlider,"بازیابی اسلایدر"),
+
 
                     }
                 },

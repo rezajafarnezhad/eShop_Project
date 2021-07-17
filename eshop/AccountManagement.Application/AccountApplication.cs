@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _0_Framework.Application;
 using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Domain;
+using AccountManagement.Domain.RoleAgg;
 
 namespace AccountManagement.Application
 {
@@ -15,11 +16,14 @@ namespace AccountManagement.Application
         private readonly IAccountRepo _accountRepo;
         private readonly IFileUploader _fileUploader;
         private readonly IAuthHelper _authHelper;
-        public AccountApplication(IAccountRepo accountRepo, IFileUploader fileUploader , IAuthHelper authHelper)
+        private readonly IRoleRepo _roleRepo;
+
+        public AccountApplication(IAccountRepo accountRepo, IFileUploader fileUploader, IAuthHelper authHelper, IRoleRepo roleRepo)
         {
             _accountRepo = accountRepo;
             _fileUploader = fileUploader;
             _authHelper = authHelper;
+            _roleRepo = roleRepo;
         }
 
         public OperationResult Register(RegisterAccount command)
@@ -129,8 +133,10 @@ namespace AccountManagement.Application
                 return operationResult.Failed(ApplicationMessage.WrongUserinformation);
             }
 
-
-            var AuthViewModel =new AuthViewModel(Account.Id, Account.RoleId, Account.FullName, Account.Username);
+            var permissions = _roleRepo.Get(Account.RoleId).Permissions
+                .Select(c=>c.Code).ToList();
+            
+            var AuthViewModel =new AuthViewModel(Account.Id, Account.RoleId, Account.FullName, Account.Username, permissions);
             _authHelper.SingIn(AuthViewModel);
 
             return operationResult.Succeeded();

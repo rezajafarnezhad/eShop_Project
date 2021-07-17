@@ -16,12 +16,15 @@ namespace InventoryManagement.Configuration.Permissions
             return new Dictionary<string, List<PermissionDTO>>
             {
                 {
-                    "Inventory",new List<PermissionDTO>
+                    "مدیریت انبار (IN)",new List<PermissionDTO>
                     {
-                        new PermissionDTO(18,"لیست انبار"),
-                        new PermissionDTO(19,"ایجاد انبار"),
-                        new PermissionDTO(20,"ویرایش انبار"),
-                        new PermissionDTO(21,"جستجو انبار"),
+                        new PermissionDTO(InventoryPermissions.ListInventory,"لیست انبار"),
+                        new PermissionDTO(InventoryPermissions.CrateInventory,"ایجاد انبار"),
+                        new PermissionDTO(InventoryPermissions.EditInventory,"ویرایش انبار"),
+                        new PermissionDTO(InventoryPermissions.SearchInventory,"جستجو انبار"),
+                        new PermissionDTO(InventoryPermissions.Increase,"افرایش موجودی"),
+                        new PermissionDTO(InventoryPermissions.Reduce,"کاهش موجودی"),
+                        new PermissionDTO(InventoryPermissions.OperationLog,"مشاهده گردش موجودی"),
 
                     }
                 }

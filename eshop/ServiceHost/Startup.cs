@@ -50,18 +50,8 @@ namespace ServiceHost
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { Roles.Admin, Roles.ContentUploder }));
-
-                options.AddPolicy("ShopManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
-
-                options.AddPolicy("InventoryManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
-
-                options.AddPolicy("DiscountManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
-
-                options.AddPolicy("AccountManagement", builder => builder.RequireRole(new List<string> { Roles.Admin }));
-
+                options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { "1", "2", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", }));
             });
-
 
             services.AddHttpContextAccessor();
 
@@ -84,15 +74,12 @@ namespace ServiceHost
             services.AddSingleton(
                 HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
 
-
             services.AddRazorPages()
+                .AddMvcOptions(op => op.Filters.Add<SecurityPageFilter>())
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
-                    options.Conventions.AuthorizeAreaFolder("Admin", "/MShop", "ShopManagement");
-                    options.Conventions.AuthorizeAreaFolder("Admin", "/Inventory", "InventoryManagement");
-                    options.Conventions.AuthorizeAreaFolder("Admin", "/MDiscounts", "DiscountManagement");
-                    options.Conventions.AuthorizeAreaFolder("Admin", "/MAccount", "AccountManagement");
+
                 });
         }
 
