@@ -173,8 +173,8 @@
                                         }
 
                                         <div class="product-actions">
-                                            <div class="product-buttons">
-                                                <a class="cart-btn">
+                                            <div class="product-buttons" >
+                                                <a class="cart-btn" onclick="AddToCart('@Model.Product.Id', '@Model.Product.Name', '@Model.Product.doublePrice', '@Model.Product.Picture', '@Model.Product.Slug')">
                                                     <i class="ion-bag"></i> افزودن به سبد خرید
                                                 </a>
                                             </div>

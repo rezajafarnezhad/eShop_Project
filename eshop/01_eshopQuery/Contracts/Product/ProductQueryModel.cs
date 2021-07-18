@@ -14,6 +14,8 @@ namespace _01_eshopQuery.Contracts.Product
         public string PictureAlt { get; set; }
         public string PictureTitle { get; set; }
         public string Price { get; set; }
+        public double doublePrice { get; set; }
+
         public string PriceWithDiscount { get; set; }
         public int DiscountRate { get; set; }
         public string CategoryName { get; set; }

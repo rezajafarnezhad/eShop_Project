@@ -186,7 +186,7 @@ a {
         a:not([href]):not([tabindex]):focus,
         a:not([href]):not([tabindex]):hover {
             color: inherit;
-            background-color: darkseagreen;
+            background-color: chartreuse;
             text-decoration: none;
         }
 

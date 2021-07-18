@@ -155,7 +155,7 @@ a:focus {
 	text-decoration: none;
 	color: inherit;
 	outline: none;
-	background-color: darkseagreen;
+	background-color: whitesmoke;
 }
 
 a:hover {
@@ -776,7 +776,7 @@ select {
 .header-cart-icon .mini-cart {
 	position: absolute;
 	top: 100%;
-	right: -80px;
+	right: -340px;
 	margin-top: 34px;
 }
 
@@ -786,7 +786,7 @@ select {
 	position: relative;
 	z-index: 9999;
 	display: none;
-	width: 350px;
+	width: 400px;
 	padding: 30px;
 	background-color: #fff;
 }
@@ -798,7 +798,7 @@ select {
 .mini-cart .cart-items-wrapper {
 	position: relative;
 	overflow: hidden;
-	max-height: 280px;
+	max-height: 600px;
 	margin: 0 -30px;
 	padding: 0 30px;
 }
@@ -1000,9 +1000,9 @@ select {
 	position: absolute;
 	z-index: 9999;
 	top: 100%;
-	right: -80px;
+	right: -202px;
 	display: none;
-	width: 300px;
+	width: 240px;
 	margin-top: 34px;
 	padding: 35px 40px 32px 40px;
 	background-color: #fff;

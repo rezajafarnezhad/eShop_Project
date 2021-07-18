@@ -1,0 +1,103 @@
+﻿@page
+@model ServiceHost.Pages.CartModel
+@{
+
+    ViewData["Title"] = "مشاهده سبد خرید";
+
+}
+
+
+<div class="breadcrumb-area section-space--half">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-wrapper breadcrumb-bg">
+                    <div class="breadcrumb-content">
+                        <h1 class="breadcrumb-content__title">مشاهده سبد خرید</h1>
+                        <ul class="breadcrumb-content__page-map">
+                            <li>
+                                <a href="/">صفحه اصلی</a>
+                            </li>
+                            <li class="active">
+                               سبد خرید
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div class="page-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--=======  page wrapper  =======-->
+                <div class="page-wrapper">
+                    <div class="page-content-wrapper">
+                        <form action="#">
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="pro-thumbnail">تصویر محصول</th>
+                                            <th class="pro-title">نام</th>
+                                            <th class="pro-price">قیمت واحد</th>
+                                            <th class="pro-quantity">تعداد</th>
+                                            <th class="pro-subtotal">مجموع قیمت</th>
+                                            <th class="pro-remove">حذف از سبد</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model.cartItems)
+                                        {
+                                        <tr>
+                                            <td class="pro-thumbnail">
+                                                <a href="single-product.html">
+                                                    <img src="/ProductPicture/@item.Picture" class="img-fluid" alt="Product">
+                                                </a>
+                                            </td>
+                                            <td class="pro-title">
+                                                <a asp-page="Product" asp-route-id="@item.Slug">@item.Name</a>
+                                            </td>
+                                            <td class="pro-price">
+                                                <span>@item.UnitPrice.ToString("n0") تومان</span>
+                                            </td>
+                                            <td class="pro-quantity">
+                                                <div class="quantity-selection">
+                                                    <input type="number" value="@item.Count" min="1">
+                                                </div>
+                                            </td>
+                                            <td class="pro-subtotal">
+                                                <span>@item.TotalItemPrice.ToString("n0") تومان</span>
+                                            </td>
+                                            <td class="pro-remove">
+                                                <a href="#">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        }
+                                        
+                                   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-12 d-flex">
+                                <div class="cart-summary">
+                                    <div class="cart-summary-button">
+                                        <button class="checkout-btn">تکمیل فرایند خرید</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

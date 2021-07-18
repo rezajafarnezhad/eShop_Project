@@ -66,6 +66,7 @@ namespace _01_eshopQuery.Query
                 Product.isinstock = inventorys.InStock;
                 var price = inventorys.UnitPrice;
                 Product.Price = price.ToMoney();
+                Product.doublePrice = price;
                 var discount = discounts.FirstOrDefault(c => c.ProductId == Product.Id);
 
                 if (discount != null)
