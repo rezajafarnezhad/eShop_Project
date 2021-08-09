@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopManagement.Application.Contract.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace _01_eshopQuery.Contracts.Product
         List<ProductQueryModel> GetLatestArrivals();
         List<ProductQueryModel> Search(string value);
         ProductQueryModel GetDetails(string slug);
-
+        List<CartItem> CheckInventoryStatus(List<CartItem> cartItems);
 
     }
 }

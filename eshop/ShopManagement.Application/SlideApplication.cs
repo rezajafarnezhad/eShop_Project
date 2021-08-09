@@ -43,7 +43,7 @@ namespace ShopManagement.Application
             {
                 return operationResult.Failed(ApplicationMessage.recordNotFound);
             }
-
+            
 
             var Path = "Slides";
             var picturePath = _fileUploader.Upload(command.Picture, Path);

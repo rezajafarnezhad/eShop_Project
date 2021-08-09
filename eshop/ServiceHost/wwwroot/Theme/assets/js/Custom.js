@@ -3,7 +3,7 @@
 
 const cookieName = "cart_Item";
 
-function AddToCart(id, name, price, picture,slug) {
+function AddToCart(id, name, price, picture, slug) {
 
     let Products = $.cookie(cookieName);
     if (Products === undefined) {
@@ -21,7 +21,7 @@ function AddToCart(id, name, price, picture,slug) {
         const product = {
             id,
             name,
-            UnitPrice:price,
+            doublePrice: price,
             picture,
             slug,
             count
@@ -34,17 +34,17 @@ function AddToCart(id, name, price, picture,slug) {
 }
 
 
+
 function updateCart() {
 
     let Products = $.cookie(cookieName);
     Products = JSON.parse(Products);
-    $("#cart_Items_count").text(Products.length);
-    let cartitemwrapper = $("#cart_Items_wrapper");
+    $("#cart_items_count").text(Products.length);
+    const cartitemwrapper = $("#cart_items_wrapper");
     cartitemwrapper.html('');
     Products.forEach(c => {
-
         const product = `<div class="single-cart-item" >
-                           <a onclick="removeFromcart('${c.id}')" class="remove-icon">
+                           <a href="#" onclick="removeFromCart('${c.id}')" class="remove-icon">
                                <i class="ion-android-close"></i>
                            </a>
                            <div class="image">
@@ -58,35 +58,39 @@ function updateCart() {
                                    <a href="/Product/${c.slug}">محصول : ${c.name}</a>
                                </p>
                                <p class="count">تعداد : ${c.count}</p>
-                               <p class="count">قیمت : ${ToRial(c.UnitPrice)} </p>
+                              <p class="count"> قیمت واحد (تومان) : ${c.doublePrice} </p>
                            </div>
                        </div>`;
-
 
         cartitemwrapper.append(product);
     });
 }
 
 
-function removeFromcart(id) {
+
+
+function removeFromCart(id) {
 
     let Products = $.cookie(cookieName);
     Products = JSON.parse(Products);
-    let itemtoremove = Products.findIndex(c => c.id === id);
+    const itemtoremove = Products.findIndex(c => c.id === id);
     Products.splice(itemtoremove, 1);
     $.cookie(cookieName, JSON.stringify(Products), { expires: 2, path: "/" })
     updateCart();
 }
 
 
-function ToRial(str) {
-
-    str = str.replace(/\,/g, '');
-    var objRegex = new RegExp('(-?[0-9]+)([0-9]{3})');
-
-    while (objRegex.test(str)) {
-        str = str.replace(objRegex, '$1,$2');
-    }
-
-    return str;
+function changeCartItemCount(id, totalId, count) {
+    var products = $.cookie(cookieName);
+    products = JSON.parse(products);
+    const productIndex = products.findIndex(x => x.id == id);
+    products[productIndex].count = count;
+    const product = products[productIndex];
+    const newPrice = parseInt(product.doublePrice) * parseInt(count);
+    $(`#${totalId}`).text(newPrice);
+    //products[productIndex].totalPrice = newPrice;
+    $.cookie(cookieName, JSON.stringify(products), { expires: 2, path: "/" });
+    updateCart();
 }
+
+

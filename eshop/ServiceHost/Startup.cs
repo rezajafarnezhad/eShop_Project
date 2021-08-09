@@ -20,6 +20,7 @@ using AccountManagement.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using _0_Framework.Infrastructure;
+using _01_eshopQuery.Contracts;
 
 namespace ServiceHost
 {
@@ -50,7 +51,7 @@ namespace ServiceHost
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> { "1", "2", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", }));
+                options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> {Roles.Admin,Roles.ContentUploder}));
             });
 
             services.AddHttpContextAccessor();
@@ -67,6 +68,7 @@ namespace ServiceHost
 
             services.AddTransient<IFileUploader, FileUploade>();
             services.AddTransient<IAuthHelper, AuthHelper>();
+            services.AddTransient<ICartCalculatorService, CartCalculatorService>();
             #endregion
 
 

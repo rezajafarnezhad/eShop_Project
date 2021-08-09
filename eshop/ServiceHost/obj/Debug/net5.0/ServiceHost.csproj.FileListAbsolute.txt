@@ -1633,3 +1633,4 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Deb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.Extensions.PlatformAbstractions.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Nancy.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\CheckOut.cshtml.g.cs

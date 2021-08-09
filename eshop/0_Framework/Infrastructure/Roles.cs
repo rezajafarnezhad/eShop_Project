@@ -12,5 +12,6 @@ namespace _0_Framework.Infrastructure
         public const string Admin = "1";
         public const string ContentUploder = "2";
         public const string User = "3";
+        public const string colleague = "4";
     }
 }

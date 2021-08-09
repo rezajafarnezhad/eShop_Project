@@ -11,7 +11,7 @@ namespace AccountManagement.Application
 {
     public class RoleApplication : IRoleApplication
     {
-
+        
         private readonly IRoleRepo _roleRepo;
 
         public RoleApplication(IRoleRepo roleRepo)
@@ -49,7 +49,7 @@ namespace AccountManagement.Application
             {
                 return operationresult.Failed(ApplicationMessage.duplicated);
             }
-
+            
             var permissions = new List<Permission>();
 
             command.permissions.ForEach(code => permissions.Add(new Permission(code)));

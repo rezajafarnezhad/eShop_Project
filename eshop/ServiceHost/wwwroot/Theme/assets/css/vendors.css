@@ -179,16 +179,17 @@ a {
     }
 
     a:not([href]):not([tabindex]) {
-        color: inherit;
+        color: white;
         text-decoration: none;
     }
 
         a:not([href]):not([tabindex]):focus,
         a:not([href]):not([tabindex]):hover {
-            color: inherit;
-            background-color: chartreuse;
+            color: white;
+            background-color: brown;
             text-decoration: none;
         }
+        
 
         a:not([href]):not([tabindex]):focus {
             outline: 0

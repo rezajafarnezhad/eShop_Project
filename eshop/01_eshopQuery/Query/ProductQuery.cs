@@ -3,6 +3,7 @@ using _01_eshopQuery.Contracts.Product;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Application.Contract.Order;
 using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure;
@@ -213,6 +214,20 @@ namespace _01_eshopQuery.Query
             }
 
             return Products;
+        }
+
+        public List<CartItem> CheckInventoryStatus(List<CartItem> cartItems)
+        {
+            var inventory = _inventoryContext.Inventory.ToList();
+
+            foreach (var CartItem in cartItems.Where(CartItem => inventory.Any(c => c.ProductId == CartItem.id && c.InStock)))
+            {
+                var itemInventory = inventory.Find(c => c.ProductId == CartItem.id);
+
+                CartItem.IsInStock = itemInventory.CalculateCurrentCount() >= CartItem.count;
+
+            }
+            return cartItems;
         }
     }
 }

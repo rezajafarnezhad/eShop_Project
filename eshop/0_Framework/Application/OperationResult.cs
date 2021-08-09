@@ -21,6 +21,8 @@ namespace _0_Framework.Application
             isSucceeded = true;
             Message = message;
             return this;
+
+            
         }
 
         public OperationResult Failed(string message = "عملیات با شکست مواجه شد")

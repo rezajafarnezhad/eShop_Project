@@ -172,17 +172,18 @@
                                             <div class="product-countdown" data-countdown="@Model.Product.Discountexpirydate"></div>
                                         }
 
-                                        <div class="product-actions">
-                                            <div class="product-buttons" >
-                                                <a class="cart-btn" onclick="AddToCart('@Model.Product.Id', '@Model.Product.Name', '@Model.Product.doublePrice', '@Model.Product.Picture', '@Model.Product.Slug')">
-                                                    <i class="ion-bag"></i> افزودن به سبد خرید
-                                                </a>
-                                            </div>
-                                            <div class="quantity-selection">
-                                                <input type="number" value="1" min="1" id="productCount">
-                                                <label>تعداد</label>
-                                            </div>
+                                    <div class="product-actions">
+                                        <div class="product-buttons">
+                                            <a class="cart-btn" onclick="AddToCart('@Model.Product.Id', '@Model.Product.Name', '@Model.Product.doublePrice', '@Model.Product.Picture', '@Model.Product.Slug')">
+                                                <i class="ion-bag"></i> افزودن به سبد خرید
+                                            </a>
                                         </div>
+                                        <div class="quantity-selection">
+                                            <input type="number" value="1" min="1" max="5" maxlength="5" id="productCount">
+                                            <label>تعداد</label>
+                                        </div>
+
+                                    </div>
 
                                         <div class="social-share-buttons mt-20">
                                             <h5>این محصول را به اشتراک بگذارید</h5>
@@ -314,3 +315,5 @@
         </div>
     </div>
 </div>
+
+

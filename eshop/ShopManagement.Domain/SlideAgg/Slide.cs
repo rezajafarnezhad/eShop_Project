@@ -32,7 +32,7 @@ namespace ShopManagement.Domain.SlideAgg
             Link = link;
             this.btnText = btnText;
         }
-
+        
 
         public void Edit(string picture, string pictureAlt, string pictureTitle, string heading, string title, string text, string link, string btnText)
         {
