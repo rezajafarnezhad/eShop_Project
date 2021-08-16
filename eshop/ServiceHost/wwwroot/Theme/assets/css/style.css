@@ -4139,18 +4139,18 @@ select {
 	margin-top: -5px;
 }
 
-.cart-btn {
+.cartt-btn {
+	color: #292929;
 	font-weight: 600;
 	line-height: 50px;
 	padding: 0 35px;
 	-webkit-transition: .3s;
 	transition: .3s;
 	vertical-align: middle;
-	color: #e33;
 	border: 2px solid #e33;
 }
 
-.cart-btn i {
+.cartt-btn i {
 	font-size: 20px;
 	line-height: 50px;
 	margin-right: 5px;
@@ -4158,7 +4158,7 @@ select {
 }
 
 .cart-btn:hover {
-	color: #292929;
+	color: green;
 	border-color: #292929;
 }
 

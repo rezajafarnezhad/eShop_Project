@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShopManagement.Domain.OrderAgg;
 
 namespace ShopManagement.Infrastructure
 {
@@ -27,7 +28,7 @@ namespace ShopManagement.Infrastructure
         public DbSet<ProductPicture> ProductPictures { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
+        public DbSet<Order> Orders  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

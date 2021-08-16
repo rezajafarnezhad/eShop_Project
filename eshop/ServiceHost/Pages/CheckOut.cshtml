@@ -103,7 +103,7 @@
                                         <hr />
                                         <h2 class="text-primary">مبلغ قابل پرداخت <span class="text-success">@Model.Cart.TotalAmount.ToString("n0") هزار تومان</span></h2>
                                         <hr />
-                                        <a class="checklistBasket">پرداخت</a>
+                                        <a class="checklistBasket" asp-page-handler="Pay">پرداخت</a>
                                     </div>
                                     
                                 </div>

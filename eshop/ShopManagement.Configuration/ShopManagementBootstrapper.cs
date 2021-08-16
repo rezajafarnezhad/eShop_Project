@@ -24,6 +24,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShopManagement.Application.Contract.Order;
+using ShopManagement.Domain.OrderAgg;
 
 namespace ShopManagement.Configuration
 {
@@ -54,7 +56,15 @@ namespace ShopManagement.Configuration
             services.AddTransient<ICommentApplication, CommentApplication>();
             services.AddTransient<ICommentRepo, CommentRepo>();
 
+            services.AddTransient<IOrderRepo, OrderRepo>();
+            services.AddTransient<IOrderApplication, OrderApplication>();
+
+
             services.AddTransient<IPermissionExposer,ShopPermissionExposer>();
+
+            
+            services.AddSingleton<ICartService, CartService>();
+
 
 
             services.AddDbContext<DBContext>(c => c.UseSqlServer(ConnectionString));

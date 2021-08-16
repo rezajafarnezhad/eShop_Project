@@ -16,6 +16,7 @@ using _0_Framework.Application;
 using BlogManagementBootstrapper;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
+using _0_Framework.Application.ZarinPal;
 using AccountManagement.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -39,8 +40,7 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
 
-
-
+            
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
                 {
@@ -69,6 +69,7 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploade>();
             services.AddTransient<IAuthHelper, AuthHelper>();
             services.AddTransient<ICartCalculatorService, CartCalculatorService>();
+            services.AddTransient<IZarinPalFactory,ZarinPalFactory>();
             #endregion
 
 
@@ -83,6 +84,14 @@ namespace ServiceHost
                     options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
 
                 });
+
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+              
+                options.MinimumSameSitePolicy = SameSiteMode.Lax;
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
