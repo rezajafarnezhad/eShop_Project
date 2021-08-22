@@ -37,7 +37,7 @@ namespace ServiceHost.Pages
             _zarinPalFactory = zarinPalFactory;
             _authHelper = authHelper;
             Cart = new Cart();
-            
+
         }
 
         public void OnGet()
@@ -45,7 +45,7 @@ namespace ServiceHost.Pages
             var serializer = new JavaScriptSerializer();
 
             var Value = Request.Cookies[cartItem];
-            
+
             var cartItems = serializer.Deserialize<List<CartItem>>(Value);
 
             foreach (var item in cartItems)
@@ -59,10 +59,10 @@ namespace ServiceHost.Pages
         }
 
 
-        public IActionResult OnGetPay()
+        public IActionResult OnPostPay(int paymentMethod)
         {
             var cart = _cartService.Get();
-
+            cart.SetPaymentMethod(paymentMethod);
             var result = _productQuery.CheckInventoryStatus(cart.items);
             if (result.Any(c => !c.IsInStock))
             {
@@ -71,17 +71,27 @@ namespace ServiceHost.Pages
             }
 
             var orderId = _orderApplication.PlaceOrder(cart);
-            var userName = _authHelper.CurrentAccountInfo().UserName;
-            var paymentResponse = _zarinPalFactory.CreatePaymentRequest(cart.PayAmount.ToString(),"", "", "خرید از درگاه فروشگاه", orderId);
+            if (paymentMethod == 1)
+            {
+                var userName = _authHelper.CurrentAccountInfo().UserName;
+                var paymentResponse = _zarinPalFactory.CreatePaymentRequest(cart.PayAmount.ToString(), "", "", "خرید از درگاه فروشگاه", orderId);
 
-            return Redirect(
-                $"https://{_zarinPalFactory.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
+                return Redirect(
+                    $"https://{_zarinPalFactory.Prefix}.zarinpal.com/pg/StartPay/{paymentResponse.Authority}");
+            }
+            else
+            {
+                var paymentResult = new PaymentResult();
+                return RedirectToPage(
+                    "/PaymentResult", paymentResult.Succeeded("سفارش  نقدی شما با موفقیت انجام شد",null));
+            }
+
 
 
 
         }
 
-        
+
         public IActionResult OnGetCallBack([FromQuery] string authority, [FromQuery] string status,
             [FromQuery] long oId)
         {
@@ -90,11 +100,11 @@ namespace ServiceHost.Pages
             var verificationResponse =
                 _zarinPalFactory.CreateVerificationRequest(authority, orderAmount.ToString(CultureInfo.InvariantCulture));
 
-            var result = new PaymentResult();;
+            var result = new PaymentResult(); ;
 
             if (status == "OK" && verificationResponse.Status == 100)
             {
-                var IssueTrackingNo = _orderApplication.PaymentSucceeded(oId,verificationResponse.RefID);
+                var IssueTrackingNo = _orderApplication.PaymentSucceeded(oId, verificationResponse.RefID);
 
                 Response.Cookies.Delete("cart_Item");
 
@@ -107,9 +117,9 @@ namespace ServiceHost.Pages
                 return RedirectToPage("/PaymentResult",
                     result.Failed("پرداخت انجام نشد در صورت کسر وجه از حساب مبلع تا 24 ساعت آینده به حساب شما واریز میشود با تشکر"));
             }
-        
 
-       
+
+
 
         }
 

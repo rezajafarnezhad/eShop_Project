@@ -8,6 +8,7 @@ namespace ShopManagement.Application.Contract.Order
 
         public double TotalAmount { get; set; }
         public double DiscountAmount { get; set; }
+        public int paymentmothod { get; set; }
         public double PayAmount { get; set; }
 
 
@@ -24,7 +25,11 @@ namespace ShopManagement.Application.Contract.Order
 
         }
 
-      
+        public void SetPaymentMethod(int methodId)
+        {
+
+            paymentmothod = methodId;
+        }
 
     }
 }

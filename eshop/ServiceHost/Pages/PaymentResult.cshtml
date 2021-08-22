@@ -40,9 +40,13 @@
                                 <p>
                                     @Model.Result.Message
                                 </p>
-                                <p>
-                                 شماره پیگیری :   <strong>@Model.Result.IssueTrackingNo</strong>
-                                </p>
+                                @if (!string.IsNullOrWhiteSpace(Model.Result.IssueTrackingNo))
+                                {
+                                    <p>
+                                        شماره پیگیری :   <strong>@Model.Result.IssueTrackingNo</strong>
+                                    </p>
+                                }
+                               
                             </div>
                         }
                         else

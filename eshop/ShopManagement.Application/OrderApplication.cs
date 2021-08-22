@@ -29,7 +29,7 @@ namespace ShopManagement.Application
         {
 
             var AccountId = _authHelper.CurrentAcountId();
-            var order = new Order(AccountId, cart.TotalAmount, cart.DiscountAmount, cart.PayAmount);
+            var order = new Order(AccountId, cart.TotalAmount, cart.DiscountAmount, cart.PayAmount,cart.paymentmothod);
 
             foreach (var Item in cart.items)
             {
