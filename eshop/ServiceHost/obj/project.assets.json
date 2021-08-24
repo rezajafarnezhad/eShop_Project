@@ -3354,6 +3354,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
@@ -3404,7 +3405,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "ShopManagement.Application": "1.0.0",
           "ShopManagement.Application.Contract": "1.0.0",
-          "ShopManagement.Infrastructure": "1.0.0"
+          "ShopManagement.Infrastructure": "1.0.0",
+          "ShopManagement.Infrastructure.InventoryACL": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopManagement.Configuration.dll": {}
@@ -3431,6 +3433,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "ShopManagement.Domain": "1.0.0"
@@ -3440,6 +3443,20 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Infrastructure.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "InventoryManagement.Application.Contracts": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryACL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.InventoryACL.dll": {}
         }
       }
     }
@@ -10144,6 +10161,11 @@
       "type": "project",
       "path": "../ShopManagement.Infrastructure/ShopManagement.Infrastructure.csproj",
       "msbuildProject": "../ShopManagement.Infrastructure/ShopManagement.Infrastructure.csproj"
+    },
+    "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.InventoryACL/ShopManagement.Infrastructure.InventoryACL.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.InventoryACL/ShopManagement.Infrastructure.InventoryACL.csproj"
     }
   },
   "projectFileDependencyGroups": {

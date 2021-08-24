@@ -7,6 +7,7 @@ using _0_Framework.Application;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.Application.Contract.Order;
 using ShopManagement.Domain.OrderAgg;
+using ShopManagement.Domain.Services;
 
 namespace ShopManagement.Application
 {
@@ -16,11 +17,13 @@ namespace ShopManagement.Application
         private readonly IOrderRepo _orderRepo;
         private readonly IAuthHelper _authHelper;
         private readonly IConfiguration _configuration;
-        public OrderApplication(IOrderRepo orderRepo, IAuthHelper authHelper, IConfiguration configuration)
+        private readonly IShopInventoryACL _shopInventoryAcl;
+        public OrderApplication(IOrderRepo orderRepo, IAuthHelper authHelper, IConfiguration configuration, IShopInventoryACL shopInventoryAcl)
         {
             _orderRepo = orderRepo;
             _authHelper = authHelper;
             _configuration = configuration;
+            _shopInventoryAcl = shopInventoryAcl;
         }
 
         #region Implementation of IOrderApplication
@@ -47,14 +50,36 @@ namespace ShopManagement.Application
             order.PaymentSucceeded(refId);
             var IssueTrackingNo = CodeGenerator.Generate("S");
             order.SetIssueTrackingNo(IssueTrackingNo);
-            //TO DO
-            _orderRepo.Save();
-            return IssueTrackingNo;
+            if (_shopInventoryAcl.ReduceFromInventory(order.Items))
+            {
+                _orderRepo.Save();return IssueTrackingNo;
+            }
+
+            return "";
+
         }
 
         public double GetAmountBy(long orderid)
         {
             return _orderRepo.GetAmountBy(orderid);
+        }
+
+        public List<OrderViewModel> Search(OrderSearchModel searchModel)
+        {
+            return _orderRepo.Search(searchModel);
+        }
+
+        public void Cancel(long id)
+        {
+            var order = _orderRepo.Get(id);
+            order.Cancel();
+            _orderRepo.Save();
+
+        }
+
+        public List<OrderItemViewModel> GetItems(long orderid)
+        {
+            return _orderRepo.GetItems(orderid);
         }
 
         #endregion

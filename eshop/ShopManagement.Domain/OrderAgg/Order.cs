@@ -37,7 +37,7 @@ namespace ShopManagement.Domain.OrderAgg
         {
             IsPaid = true;
 
-            if (RefId != 0) RefId = refId;
+            if (refId != 0) RefId = refId;
         }
 
         public void SetIssueTrackingNo(string number)

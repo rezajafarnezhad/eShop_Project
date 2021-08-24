@@ -79,3 +79,9 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\obj\Debug\net5.0\ref\DiscountManagement.Application.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\obj\Debug\net5.0\DiscountManagement.Application.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\DiscountManagement.Application\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb

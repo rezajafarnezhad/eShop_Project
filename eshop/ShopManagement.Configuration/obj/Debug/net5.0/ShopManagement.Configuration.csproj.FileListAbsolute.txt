@@ -136,3 +136,11 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Conf
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.genruntimeconfig.cache
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryACL.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryACL.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ShopManagement.Configuration\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb

@@ -24,6 +24,18 @@ namespace AccountManagement.InfrastructureEFCore.Repository
             return _context.Accounts.SingleOrDefault(c => c.Username == username);
         }
 
+        public List<AccountViewModel> GetAccount()
+        {
+            return _context.Accounts.Select(c => new AccountViewModel()
+            {
+                Id = c.Id,
+                FullName = c.FullName
+
+
+            }).ToList();
+
+        }
+
         public EditAccount GetForEdit(long id)
         {
             var c = _context.Accounts.Find(id);

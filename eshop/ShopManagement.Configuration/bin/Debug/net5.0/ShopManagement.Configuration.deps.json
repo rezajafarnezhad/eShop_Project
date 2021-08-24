@@ -16,7 +16,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "ShopManagement.Application": "1.0.0",
           "ShopManagement.Application.Contract": "1.0.0",
-          "ShopManagement.Infrastructure": "1.0.0"
+          "ShopManagement.Infrastructure": "1.0.0",
+          "ShopManagement.Infrastructure.InventoryACL": "1.0.0"
         },
         "runtime": {
           "ShopManagement.Configuration.dll": {}
@@ -1764,6 +1765,34 @@
           "0_Framework.dll": {}
         }
       },
+      "AccountManagement.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.6"
+        },
+        "runtime": {
+          "AccountManagement.Application.Contracts.dll": {}
+        }
+      },
+      "AccountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "AccountManagement.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Domain.dll": {}
+        }
+      },
+      "AccountManagement.InfrastructureEFCore/1.0.0": {
+        "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6"
+        },
+        "runtime": {
+          "AccountManagement.InfrastructureEFCore.dll": {}
+        }
+      },
       "BlogManagement.Application.Contracts/1.0.0": {
         "dependencies": {
           "0_Framework": "1.0.0"
@@ -1840,6 +1869,7 @@
       },
       "InventoryManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
@@ -1878,12 +1908,22 @@
       },
       "ShopManagement.Infrastructure/1.0.0": {
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "ShopManagement.Domain": "1.0.0"
         },
         "runtime": {
           "ShopManagement.Infrastructure.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+        "dependencies": {
+          "InventoryManagement.Application.Contracts": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Infrastructure.InventoryACL.dll": {}
         }
       }
     }
@@ -3031,6 +3071,21 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AccountManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.InfrastructureEFCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "BlogManagement.Application.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -3092,6 +3147,11 @@
       "sha512": ""
     },
     "ShopManagement.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

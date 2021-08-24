@@ -94,3 +94,9 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\obj\Debug\net5.0\ref\InventoryManagement.Configuration.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\obj\Debug\net5.0\InventoryManagement.Configuration.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\obj\Debug\net5.0\InventoryManagement.Configuration.genruntimeconfig.cache
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb

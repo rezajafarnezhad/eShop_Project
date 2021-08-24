@@ -26,6 +26,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ShopManagement.Application.Contract.Order;
 using ShopManagement.Domain.OrderAgg;
+using ShopManagement.Domain.Services;
+using ShopManagement.Infrastructure.InventoryACL;
 
 namespace ShopManagement.Configuration
 {
@@ -60,9 +62,10 @@ namespace ShopManagement.Configuration
             services.AddTransient<IOrderApplication, OrderApplication>();
 
 
-            services.AddTransient<IPermissionExposer,ShopPermissionExposer>();
+            services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
 
-            
+            services.AddTransient<IShopInventoryACL, ShopInventoryACL>();
+
             services.AddSingleton<ICartService, CartService>();
 
 

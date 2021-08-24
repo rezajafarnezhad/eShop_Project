@@ -10,10 +10,12 @@ namespace InventoryManagement.Application
     {
 
         private readonly IInventoryRepo _inventoryRepo;
+        private readonly IAuthHelper _authHelper;
 
-        public InventoryApplication(IInventoryRepo inventoryRepo)
+        public InventoryApplication(IInventoryRepo inventoryRepo, IAuthHelper authHelper)
         {
             _inventoryRepo = inventoryRepo;
+            _authHelper = authHelper;
         }
 
         public OperationResult Create(CreateInventory command)
@@ -88,7 +90,8 @@ namespace InventoryManagement.Application
         {
 
             var operationResult = new OperationResult();
-            const long OperationId = 1;
+            var OperationId = _authHelper.CurrentAcountId();
+
 
             foreach (var item in command)
             {
@@ -109,8 +112,9 @@ namespace InventoryManagement.Application
             {
                 return operationResult.Failed(ApplicationMessage.recordNotFound);
             }
-            
-            const long OperationId = 1;
+
+         
+            var  OperationId = _authHelper.CurrentAcountId();
             inventory.Reduce(command.Count, OperationId, command.Description, 0);
             _inventoryRepo.Save();
             return operationResult.Succeeded();

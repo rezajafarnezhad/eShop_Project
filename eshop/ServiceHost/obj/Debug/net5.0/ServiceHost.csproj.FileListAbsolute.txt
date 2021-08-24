@@ -1636,3 +1636,7 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Deb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\CheckOut.cshtml.g.cs
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\RestSharp.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Pages\PaymentResult.cshtml.g.cs
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryACL.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryACL.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\OrdersM\Index.cshtml.g.cs
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\OrdersM\Items.cshtml.g.cs

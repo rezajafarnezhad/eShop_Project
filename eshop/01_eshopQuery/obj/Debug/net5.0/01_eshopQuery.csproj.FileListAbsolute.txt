@@ -115,3 +115,9 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\obj\D
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\obj\Debug\net5.0\01_eshopQuery.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\obj\Debug\net5.0\ref\01_eshopQuery.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\obj\Debug\net5.0\01_eshopQuery.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\01_eshopQuery\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb

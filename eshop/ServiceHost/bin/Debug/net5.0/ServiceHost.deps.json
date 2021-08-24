@@ -2680,6 +2680,7 @@
       },
       "InventoryManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
@@ -2724,7 +2725,8 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "ShopManagement.Application": "1.0.0",
           "ShopManagement.Application.Contract": "1.0.0",
-          "ShopManagement.Infrastructure": "1.0.0"
+          "ShopManagement.Infrastructure": "1.0.0",
+          "ShopManagement.Infrastructure.InventoryACL": "1.0.0"
         },
         "runtime": {
           "ShopManagement.Configuration.dll": {}
@@ -2747,6 +2749,7 @@
       },
       "ShopManagement.Infrastructure/1.0.0": {
         "dependencies": {
+          "AccountManagement.InfrastructureEFCore": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
           "ShopManagement.Domain": "1.0.0"
@@ -2756,6 +2759,18 @@
         },
         "compile": {
           "ShopManagement.Infrastructure.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
+        "dependencies": {
+          "InventoryManagement.Application.Contracts": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ShopManagement.Infrastructure.InventoryACL.dll": {}
+        },
+        "compile": {
+          "ShopManagement.Infrastructure.InventoryACL.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -5881,6 +5896,11 @@
       "sha512": ""
     },
     "ShopManagement.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShopManagement.Infrastructure.InventoryACL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -136,3 +136,9 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBoots
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\obj\Debug\net5.0\ref\BlogManagementBootstrapper.dll
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\obj\Debug\net5.0\BlogManagementBootstrapper.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\obj\Debug\net5.0\BlogManagementBootstrapper.genruntimeconfig.cache
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\BlogManagementBootstrapper\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb
