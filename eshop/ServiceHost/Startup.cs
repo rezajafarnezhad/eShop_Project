@@ -22,6 +22,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using _0_Framework.Infrastructure;
 using _01_eshopQuery.Contracts;
+using InventoryManagement.Presentation;
+using ShopManagement.Presentation;
 
 namespace ServiceHost
 {
@@ -54,6 +56,9 @@ namespace ServiceHost
                 options.AddPolicy("AdminArea", builder => builder.RequireRole(new List<string> {Roles.Admin,Roles.ContentUploder}));
             });
 
+            services.AddCors(op => op.AddPolicy("Policy", builder =>
+                builder.WithOrigins("https://localhost:5001")));
+
             services.AddHttpContextAccessor();
 
             var ConnectionString = Configuration.GetConnectionString("EShopDB");
@@ -83,7 +88,10 @@ namespace ServiceHost
                 {
                     options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
 
-                });
+                })
+                .AddApplicationPart(typeof(ShopController).Assembly)
+                .AddApplicationPart(typeof(InventoryController).Assembly)
+                .AddNewtonsoftJson();
 
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -119,7 +127,7 @@ namespace ServiceHost
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("Policy");
 
             app.UseEndpoints(endpoints =>
             {

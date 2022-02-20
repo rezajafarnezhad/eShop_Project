@@ -125,5 +125,7 @@ namespace InventoryManagement.Application
         {
             return _inventoryRepo.Search(searchModel);
         }
+
+      
     }
 }

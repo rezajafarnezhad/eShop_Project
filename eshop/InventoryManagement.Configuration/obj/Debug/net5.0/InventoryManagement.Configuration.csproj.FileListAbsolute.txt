@@ -100,3 +100,17 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\AccountManagement.InfrastructureEFCore.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\01_eshopQuery.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contracts.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\01_eshopQuery.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\BlogManagement.Infrastructure.EFCore.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contracts.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\InventoryManagement.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb

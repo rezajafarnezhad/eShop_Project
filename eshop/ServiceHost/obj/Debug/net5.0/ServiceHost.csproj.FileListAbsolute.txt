@@ -1640,3 +1640,10 @@ C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Deb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryACL.pdb
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\OrdersM\Index.cshtml.g.cs
 C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\MShop\OrdersM\Items.cshtml.g.cs
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\ShopManagement.Presentation.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\ShopManagement.Presentation.pdb
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\mReza\source\repos\Orginal\Project_Eshop\Code\eshop\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

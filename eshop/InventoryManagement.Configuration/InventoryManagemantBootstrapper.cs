@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _01_eshopQuery.Contracts.Inventory;
+using _01_eshopQuery.Query;
 
 namespace InventoryManagement.Configuration
 {
@@ -27,6 +29,8 @@ namespace InventoryManagement.Configuration
 
 
             services.AddTransient<IPermissionExposer, InventoryPermissionExposer>();
+
+            services.AddScoped<IInventoryQuery, InventoryQuery>();
 
 
             services.AddDbContext<InventoryContext>(c => c.UseSqlServer(ConnectionString));
